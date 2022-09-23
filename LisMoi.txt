@@ -1,0 +1,4 @@
+aller sur git bash
+cd BLMshop
+cd BLMshop
+git commit -m "" -----> Pour les messages
