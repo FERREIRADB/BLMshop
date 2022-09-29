@@ -1,3 +1,7 @@
+<?php
+header('location:vue/accueil.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,5 @@
     <title>index</title>
 </head>
 <body>
-
-    <h1>TEST iaaaaaaaaaaaaaaaa</h1>
-    <p>c'est un site de voituuuuuuuuuuuuuuu</p>
-    <p>test</p>
 </body>
 </html>
