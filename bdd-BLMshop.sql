@@ -13,7 +13,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-USE DATABASE `BLMshop`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -79,16 +78,15 @@ CREATE TABLE `produits` (
   `name` varchar(255) NOT NULL DEFAULT '0',
   `nameImage` varchar(255) NOT NULL DEFAULT '0',
   `price` int(11) NOT NULL DEFAULT 0,
-  `productType` varchar(255) NOT NULL DEFAULT '0',
+  `productType` varchar(255) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `produits`
 --
 
-INSERT INTO `produits` (`idProduits`, `name`, `nameImage`, `price`, `productType`,) VALUES
-(1, 'Bequet M Carbon', 'spoiler-arriere-en-carbone-bmw-m4-cs.jpg', 200, 'aileron'), 
-(2, 'Nike Air Force 1 Low', 'Travis Scott Cactus Jack', 'air-jordan-4-retro-off-white-sail-w-1-1000.png', 483, 'shoes', 'Nike', '5');
+INSERT INTO `produits` (`idProduits`, `name`, `nameImage`, `price`, `productType`) VALUES
+(1, 'Bequet M Carbon', 'spoiler-arriere-en-carbone-bmw-m4-cs.jpg', 200, 'aileron');
 
 -- --------------------------------------------------------
 --
@@ -99,13 +97,13 @@ INSERT INTO `produits` (`idProduits`, `name`, `nameImage`, `price`, `productType
 -- Index pour la table `commande`
 --
 ALTER TABLE `commande`
-  ADD PRIMARY KEY (`id`,`idProduits`);
+  ADD PRIMARY KEY (`idUser`,`idProduits`);
 
 --
 -- Index pour la table `panier`
 --
 ALTER TABLE `panier`
-  ADD PRIMARY KEY (`id`,`idProduits`);
+  ADD PRIMARY KEY (`idUser`,`idProduits`);
 
 --
 -- Index pour la table `produits`
@@ -117,7 +115,7 @@ ALTER TABLE `produits`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idUser`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -133,7 +131,7 @@ ALTER TABLE `produits`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
