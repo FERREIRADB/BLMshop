@@ -1,5 +1,6 @@
-
-
+<link rel="stylesheet" src="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="./accueil.php"><img src="../img/BLMshopLogo.png" style="width:50px; height:50px;"></a>
@@ -9,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Accueil
+          <a class="nav-link" href="./accueil.php">Accueil
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
@@ -17,7 +18,7 @@
           <a class="nav-link" href="./produits.php">Produit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">A propos de nous</a>
+          <a class="nav-link" href="./about.php">A propos de nous</a>
         </li>
       </ul>
       <form class="d-flex">

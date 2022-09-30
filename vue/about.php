@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produits</title>
+    <title>Document</title>
 </head>
 <body>
-    <?php include "include/navbar.php"; $request = "select * from produits ";?>
-    <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsDiv($request) ?></article>
-
+<?php include "include/navbar.php"; $request = "select * from produits ";?>
+    <?php createurs(); ?>
 </body>
 </html>
