@@ -1,3 +1,4 @@
+<?= require_once "../modele/fonctions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include "include/navbar.php"; ?>
-    <h1>ayaaaaaaa</h1>
+    <?php include "include/navbar.php"; $request = "select * from produits ";?>
+    <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsDiv($request) ?></article>
+
 </body>
 </html>

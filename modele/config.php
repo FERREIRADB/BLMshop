@@ -2,7 +2,7 @@
 
 $dsn = 'mysql:dbname=BLMshop;host=localhost';
 $user = 'root';
-$pass = '';
+$pass = 'Super';
 session_start();
 
 try {
