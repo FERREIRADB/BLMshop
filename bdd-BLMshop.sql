@@ -57,21 +57,6 @@ CREATE TABLE `commande` (
   `dateAujo` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Déchargement des données de la table `commande`
---
-
-INSERT INTO `commande` (`idUser`, `idProduits`, `dateAujo`) VALUES
-(21, 19, '2022-06-03'),
-(21, 27, '2022-06-03'),
-(21, 44, '2022-06-03'),
-(21, 46, '2022-06-03'),
-(23, 1, '2022-06-03'),
-(24, 1, '2022-06-03'),
-(24, 2, '2022-06-03'),
-(24, 3, '2022-06-03'),
-(24, 7, '2022-06-03');
-
 -- --------------------------------------------------------
 
 --
@@ -82,16 +67,6 @@ CREATE TABLE `panier` (
   `idUser` int(11) NOT NULL,
   `idProduits` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `panier`
---
-
-INSERT INTO `panier` (`idUser`, `idProduits`) VALUES
-(24, 2),
-(24, 4),
-(24, 5),
-(27, 55);
 
 -- --------------------------------------------------------
 
@@ -121,12 +96,6 @@ INSERT INTO `produits` (`idProduits`, `name`, `nameImage`, `price`, `productType
 --
 
 --
--- Index pour la table `arrivals`
---
-ALTER TABLE `arrivals`
-  ADD PRIMARY KEY (`idArrivals`);
-
---
 -- Index pour la table `commande`
 --
 ALTER TABLE `commande`
@@ -153,12 +122,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
-
---
--- AUTO_INCREMENT pour la table `arrivals`
---
-ALTER TABLE `arrivals`
-  MODIFY `idArrivals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `produits`
