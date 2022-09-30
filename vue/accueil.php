@@ -12,6 +12,7 @@
 <body>
     <?php
         include "include/navbar.php";
+        include "include/carousel.php";
     ?>
     
 </body>
