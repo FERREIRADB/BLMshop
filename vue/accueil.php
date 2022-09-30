@@ -11,6 +11,7 @@
         include "include/navbar.php";
         include "include/carousel.php";
     ?>
-    
+    <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
+    <p></p>
 </body>
 </html>
