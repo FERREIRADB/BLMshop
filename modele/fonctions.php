@@ -21,7 +21,8 @@ function produitsDiv($param)
     
     foreach (getDb()->query($param) as $row) {
         echo 
-                '<div class="" style="width:550px; margin:1%; padding-left:5%; text-decoration: none;">
+                '<a  href="./detail.php?idProduits=' . $row['idProduits'] . '"
+                <div class="" style="width:550px; margin:1%; padding-left:5%; text-decoration: none;">
                     <img class="card-img-top" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
                     <div style="color:black;" class="card-body">
                     <h5 class="card-title">' . $row['name'] . '</h5>
@@ -50,4 +51,131 @@ function createurs()
               </div>';
     }
 }
+
+function detailProduit()
+{
+    $id = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
+
+    if ($id != "") {
+        $statement = getDb()->prepare("SELECT name, nameImage, price FROM produits WHERE idProduits = ?;");
+        $statement->execute([$id]);
+        $detailChaussure = $statement->fetch(PDO::FETCH_OBJ);
+    }
+    echo '  <div class="container">';
+    echo '  <div class="cardDetail" style="border-top: none; border-radius:25px">';
+    echo '    <div class="card-head">';
+    echo '      <img src="../img/BLMshopLogo.png" alt="logo" class="card-logo">';
+    echo '      <img src="../img/' . $detailChaussure->nameImage . '" alt="Shoe" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
+    echo '      <div class="product-detail">';
+    echo '        <h2>' . $detailChaussure->name;
+    echo '      </div>';
+    echo '      <span class="back-text">';
+    echo '              Stocky';
+    echo '            </span>';
+    echo '    </div>';
+    echo '    <div class="card-body">';
+    echo '      <div class="product-desc">';
+    echo '        <span class="product-title">';
+    echo '                <span class="badge">';
+    echo '                  New';
+    echo '                </span>';
+    echo '        </span>';
+    echo '        <span class="product-caption">';
+    echo '              </span>';
+    echo '        <span class="product-price" style="margin-top:10px; margin-left:20px">';
+    echo '              </span>';
+    echo '              </span>';
+    echo '        <span class="product-price" style="margin-top:10px; margin-left:200px">';
+
+    if (isset($_SESSION['user'])) {
+        echo '                <a style="color:white; font-size:23px;" href="panier.php?idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
+    } else {
+        echo '<span style="color:red; font-size:19px;">Veuillez vous connecter pour ajouter ce produit au panier</span>';
+    }
+    echo '              </span>';
+
+    echo '      </div>';
+    echo '    </div>';
+    echo '  </div>';
+    echo '</div>';
+}
+
+function afficherPanier()
+{
+
+    global $pdo;
+    $total = 0;
+
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.id = ' . $_SESSION['user_id']) as $row) {
+        $total += $row['price'];
+    }
+    echo '<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="ibox">
+                    <div class="ibox-title">
+                    
+                    <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="panier.php?idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
+                        <span style="font-size: 15px;margin:10px" class="pull-right">Total : $' . number_format($total, 0, '', '\'') . '</span>
+                       
+                        <img class="petit_panier" src="img/panier.png" alt="panier" style="width: 30px;">
+                    </div>';
+
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.id = ' . $_SESSION['user_id']) as $row) {
+        echo '<div class="ibox-content">
+                                        <div class="table-responsive">
+                                            <table class="table shoping-cart-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="90">
+                                                            <div>
+                                                            <img class="card-img-top" src="./img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
+                                                            </div>
+                                                        </td>
+                                                        <td class="desc">
+                                                            <h3>
+                                                            <a href="#" class="text-navy">
+                                                            ' . $row['name'] . '
+                                                            </a>
+                                                            <div class="m-t-sm">
+                                                                <a href="panier.php?id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>';
+
+        echo '                                                    </div>
+                                                        </td>
+                                                        <td>
+                                                            <h4>
+                                                                $' . number_format($row['price'], 0, '', '\'') . '
+                                                            </h4>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                   
+                               ';
+    }
+    echo '
+    <div class="ibox-content">
+    <a href="paiement.php">
+        <button class="btn pull-right" style="font-size:15px; color:rgba(0, 196, 0, 0.75)">
+            <i class="fa fa fa-shopping-cart">
+            </i> 
+            Régler le paiement
+        </button>
+    </a>
+    <a href="produits.php">
+    <button class="btn btn-white" style="font-size:15px;"><i class="fa fa-arrow-left"></i> Continuer les achats</button>
+    </a>
+    </div>
+   
+</div>
+   
+    </div>
+    </div>
+</div>
+</div>';
+}
+
 ?>

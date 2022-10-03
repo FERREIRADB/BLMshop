@@ -25,6 +25,11 @@
         <input class="form-control me-sm-2" type="text" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
+      <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="panier.php">Panier</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
