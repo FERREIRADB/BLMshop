@@ -12,6 +12,6 @@
         include "include/carousel.php";
     ?>
     <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
-    <p></p>
+    <p>Fait par des passionné pour des passionné</p>
 </body>
 </html>

@@ -11,13 +11,13 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="la.jpg" alt="Los Angeles" class="d-block w-100">
+      <img src="../img/carousel_bmw1.jpg" alt="Los Angeles" class="d-block w-100">
     </div>
     <div class="carousel-item">
-      <img src="chicago.jpg" alt="Chicago" class="d-block w-100">
+      <img src="../img/carousel_bmw2.jpg" alt="Chicago" class="d-block w-100">
     </div>
     <div class="carousel-item">
-      <img src="ny.jpg" alt="New York" class="d-block w-100">
+      <img src="../img/carousel_bmw3.jpg" alt="New York" class="d-block w-100">
     </div>
   </div>
 
