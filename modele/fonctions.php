@@ -69,7 +69,7 @@ function detailProduit()
     echo '        <h2>' . $detailChaussure->name;
     echo '      </div>';
     echo '      <span class="back-text">';
-    echo '              Stocky';
+    echo '              BLMshop';
     echo '            </span>';
     echo '    </div>';
     echo '    <div class="card-body">';
@@ -176,5 +176,23 @@ function afficherPanier()
 </div>
 </div>';
 }
+function viderPanier($idUser)
+{
+    if ($idUser != "") {
+        $statement = getDb()->prepare("DELETE FROM `panier` WHERE id = ?");
+        $param = [$idUser];
+        $statement->execute($param);
+        return $statement;
+    }
+}
 
+function deleteArticlePanier($id)
+{
+    if ($id != "") {
+        $statement = getDb()->prepare("DELETE FROM `panier` WHERE idProduits = ?");
+        $param = [$id];
+        $statement->execute($param);
+        return $statement;
+    }
+}
 ?>
