@@ -37,7 +37,7 @@ $id = filter_input(INPUT_GET, 'id');
         $idProduits = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
     if ($idProduits != null) {
         //$statement = getDb()->prepare("SELECT name, lastName, nameImage, price, brand, note FROM produits WHERE idProduits = ?;");
-        $statement = getDb()->prepare("INSERT INTO panier (id, idProduits) VALUES (?, ?)");
+        $statement = getDb()->prepare("INSERT INTO panier (idUser, idProduits) VALUES (?, ?)");
         $statement->execute([$_SESSION['user_id'], $idProduits]);
     }
         ?>

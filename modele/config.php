@@ -3,7 +3,6 @@
 $dsn = 'mysql:dbname=BLMshop;host=localhost';
 $user = 'root';
 $pass = 'Super';
-session_start();
 
 try {
     $pdo = new PDO($dsn, $user, $pass);

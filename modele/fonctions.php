@@ -1,6 +1,7 @@
 <?php
-require_once 'config.php';
 
+session_start();
+require_once 'config.php';
 function getDb()
 {
     static $db;
@@ -106,7 +107,7 @@ function afficherPanier()
     global $pdo;
     $total = 0;
 
-    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.id = ' . $_SESSION['user_id']) as $row) {
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         $total += $row['price'];
     }
     echo '<div class="container">

@@ -1,5 +1,5 @@
 <?php
-require_once 'bdd/config.php';
+require_once '../modele/config.php';
 
 $errorMsg = "";
 if (isset($_POST['submit'])) {
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['connected'] = true;
                         $success = "Login success";
-                        header('Location: ../account.php');
+                        header('Location: account.php');
                     }
                     // Si correspond pas, erreur
                     else {
@@ -64,8 +64,9 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+<?php include "include/navbar.php";?>
+
     <div id="container">
-        <a href="../"><h2>Stocky</h2></a>
         <p>Connecetez-vous</p>
         <?php
         // Messages d'erreurs si erreur

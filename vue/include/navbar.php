@@ -1,3 +1,5 @@
+
+
 <link rel="stylesheet" src="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -29,6 +31,21 @@
       <li class="nav-item">
           <a class="nav-link" href="panier.php">Panier</a>
         </li>
+        <?php if ($_SESSION['user_id'] == null) : ?>
+                        <div class="navbar-nav ms-auto">
+                            <a href="login.php">Connexion</a>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($_SESSION['user_id'] != null) : ?>
+                        <div class="navbar-nav ms-auto">
+                            <a href="account.php"><?= $_SESSION['user'] ?></a>
+                        <?= ($_SESSION['user'] == "admin@gmail.com") ? "<a href=\"admin.php\">Admin</a>" : ""; ?>
+                            <a href="logout.php">Déconnexion</a>
+                            <a href="panier.php"><img src="img/panier.png" width="25" alt=""></a>
+
+
+                        </div>
+                    <?php endif ?>
       </ul>
     </div>
   </div>
