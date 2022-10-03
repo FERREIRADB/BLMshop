@@ -1,6 +1,7 @@
 <?php
 require_once '../modele/config.php';
-
+require_once '../modele/config.php'; 
+var_dump($_SESSION);
 $errorMsg = "";
 if (isset($_POST['submit'])) {
     $email = trim($_POST['email']);
@@ -16,8 +17,8 @@ if (isset($_POST['submit'])) {
     if (!empty($email) && !empty($password)) {
         try {
             // Sélectionne le user qui a l'email correspondant
-            $statement = $pdo->prepare("SELECT * FROM users WHERE email=:uemail");
-            $statement->execute(array(':uemail' => $email));
+            $statement = $pdo->prepare("SELECT * FROM users WHERE email=:email");
+            $statement->execute(array(':email' => $email));
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
             // User trouvé
@@ -26,7 +27,7 @@ if (isset($_POST['submit'])) {
                     // On vérifie que le mot de passe correspond
                     if (password_verify($password, $row['password'])) {
                         $_SESSION['user'] = $row['email'];
-                        $_SESSION['user_id'] = $row['id'];
+                        $_SESSION['user_id'] = $row['idUser'];
                         $_SESSION['connected'] = true;
                         $success = "Login success";
                         header('Location: account.php');

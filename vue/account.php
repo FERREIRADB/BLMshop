@@ -14,7 +14,7 @@ function UserDetails(int $user_id)
 {
     global $pdo;
     try {
-        $query = $pdo->prepare("SELECT id, pseudo, email, password FROM users WHERE id=:user_id");
+        $query = $pdo->prepare("SELECT idUser, pseudo, email, password FROM users WHERE idUser=:user_id");
         $query->bindParam("user_id", $user_id, PDO::PARAM_STR);
         $query->execute();
         if ($query->rowCount() > 0) {
@@ -80,7 +80,7 @@ if (isset($_POST['btn-save'])) {
 </head>
 
 <body>
-    <?php include_once 'php/header.php' ?>
+    <?php include_once 'include/navbar.php' ?>
     <div class="m-4">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">

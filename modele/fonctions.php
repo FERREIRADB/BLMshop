@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 require_once 'config.php';
 function getDb()
 {
@@ -123,7 +121,7 @@ function afficherPanier()
                         <img class="petit_panier" src="img/panier.png" alt="panier" style="width: 30px;">
                     </div>';
 
-    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.id = ' . $_SESSION['user_id']) as $row) {
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         echo '<div class="ibox-content">
                                         <div class="table-responsive">
                                             <table class="table shoping-cart-table">
