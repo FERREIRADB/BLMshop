@@ -1,7 +1,6 @@
 <?php
 require_once '../modele/config.php';
 require_once '../modele/config.php'; 
-var_dump($_SESSION);
 $errorMsg = "";
 if (isset($_POST['submit'])) {
     $email = trim($_POST['email']);

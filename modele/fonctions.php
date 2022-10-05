@@ -129,7 +129,7 @@ function afficherPanier()
                                                     <tr>
                                                         <td width="90">
                                                             <div>
-                                                            <img class="card-img-top" src="./img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
+                                                            <img class="card-img-top" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
                                                             </div>
                                                         </td>
                                                         <td class="desc">

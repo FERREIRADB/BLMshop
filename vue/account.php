@@ -42,8 +42,6 @@ if ($edit) {
 } else {
     $readonly = "readonly";
 }
-// var_dump($_POST);
-// var_dump($user);
 // Modifier ses informations
 if (isset($_POST['btn-save'])) {
     $pseudo = $_POST['pseudo'];
