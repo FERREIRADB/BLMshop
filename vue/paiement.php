@@ -1,4 +1,7 @@
-<?php include '../modele/fonctions.php'; 
+<?php
+include '../modele/fonctions.php'; 
+
+
 
 $submit = filter_input(INPUT_POST, 'submit', FILTER_SANITIZE_STRING);
 $_SESSION['user_id'];
@@ -6,14 +9,14 @@ if($submit == "Confirmer")
 {
     //ajouterCommander($_SESSION['user_id']);
     viderPanier($_SESSION['user_id']);
-    header('Location:commande.php');
+    header('Location:accueil.php');
 }
 
 
 
 
 ?>
-<script src="js/paiement.js"></script>
+<script src="../js/paiement.js"></script>
     <link rel='stylesheet' type='text/css' href='../css/paiement.css'>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
 <div class="payment-title">
@@ -139,7 +142,7 @@ if($submit == "Confirmer")
             <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
             <form action="" method="post">
         </div>
-        <a href="../stocky"><input type="submit" name="submit" value="Confirmer"></a>
+        <a href="../"><input type="submit" name="submit" value="Confirmer"></a>
     </div>
     </form>
     

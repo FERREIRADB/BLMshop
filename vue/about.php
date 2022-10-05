@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php include "include/navbar.php"; $request = "select * from produits ";?>
+<?php include "include/navbar.php";?>
     <?php createurs(); ?>
 </body>
 </html>
