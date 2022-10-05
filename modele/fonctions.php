@@ -17,10 +17,10 @@ function getDb()
 //permet de cree les differentes div dans la page produis et qui affiche les produits avec la bdd
 function produitsDiv($param)
 {
-    
+
     foreach (getDb()->query($param) as $row) {
-        echo 
-                '<a  href="./detail.php?idProduits=' . $row['idProduits'] . '"
+        echo
+        '<a  href="./detail.php?idProduits=' . $row['idProduits'] . '"
                 <div class="" style="width:550px; margin:1%; padding-left:5%; text-decoration: none;">
                     <img class="card-img-top" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
                     <div style="color:black;" class="card-body">
@@ -58,15 +58,15 @@ function detailProduit()
     if ($id != "") {
         $statement = getDb()->prepare("SELECT name, nameImage, price FROM produits WHERE idProduits = ?;");
         $statement->execute([$id]);
-        $detailChaussure = $statement->fetch(PDO::FETCH_OBJ);
+        $detailProduit = $statement->fetch(PDO::FETCH_OBJ);
     }
     echo '  <div class="container">';
     echo '  <div class="cardDetail" style="border-top: none; border-radius:25px">';
     echo '    <div class="card-head">';
     echo '      <img src="../img/BLMshopLogo.png" alt="logo" class="card-logo">';
-    echo '      <img src="../img/' . $detailChaussure->nameImage . '" alt="Shoe" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
+    echo '      <img src="../img/' . $detailProduit->nameImage . '" alt="Voiture" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
     echo '      <div class="product-detail">';
-    echo '        <h2>' . $detailChaussure->name;
+    echo '        <h2>' . $detailProduit->name;
     echo '      </div>';
     echo '      <span class="back-text">';
     echo '              BLMshop';
@@ -75,6 +75,7 @@ function detailProduit()
     echo '    <div class="card-body">';
     echo '      <div class="product-desc">';
     echo '        <span class="product-title">';
+    echo '            <b>' . $detailProduit->name . '</b>';
     echo '                <span class="badge">';
     echo '                  New';
     echo '                </span>';
@@ -82,6 +83,7 @@ function detailProduit()
     echo '        <span class="product-caption">';
     echo '              </span>';
     echo '        <span class="product-price" style="margin-top:10px; margin-left:20px">';
+    echo '                USD<b>' . number_format($detailProduit->price) . '</b>';
     echo '              </span>';
     echo '              </span>';
     echo '        <span class="product-price" style="margin-top:10px; margin-left:200px">';
@@ -179,7 +181,7 @@ function afficherPanier()
 function viderPanier($idUser)
 {
     if ($idUser != "") {
-        $statement = getDb()->prepare("DELETE FROM `panier` WHERE id = ?");
+        $statement = getDb()->prepare("DELETE FROM `panier` WHERE idUser = ?");
         $param = [$idUser];
         $statement->execute($param);
         return $statement;
@@ -195,4 +197,3 @@ function deleteArticlePanier($id)
         return $statement;
     }
 }
-?>

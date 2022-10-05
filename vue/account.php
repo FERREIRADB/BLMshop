@@ -49,14 +49,14 @@ if (isset($_POST['btn-save'])) {
     $email = $_POST['email'];
     $id = $_SESSION['user_id'];
 
-    $query = $pdo->prepare("SELECT * from users WHERE id=?");
+    $query = $pdo->prepare("SELECT * from users WHERE idUser=?");
     $query->execute([$id]);
     $user = $query->fetch(PDO::FETCH_OBJ);
 
-    $res = $user->id;
+    $res = $user->idUser;
     if ($res == $id) {
         $newPassword = password_hash($password, PASSWORD_DEFAULT);
-        $update = "UPDATE users set pseudo='$pseudo', email='$email', password='$newPassword' WHERE id=$id";
+        $update = "UPDATE users set pseudo='$pseudo', email='$email', password='$newPassword' WHERE idUSer=$id";
         $stmt = $pdo->prepare($update);
         $stmt->execute();
     }
