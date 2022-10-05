@@ -7,18 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<style> 
-</style>
+    <style>
+    </style>
 </head>
 
 <body>
     <?php
     include "include/navbar.php";
-    include "include/carousel.php";
     ?>
-
-    <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
-    <p>Fait par des passionné pour des passionné</p>
+    <header>
+        <!-- The HTML5 video element that will create the background video on the header -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; margin-top:100px;">
+            <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
+        </video>
+    </header>
+    <div style="text-align:center;">
+        <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
+        <p>Fait par des passionné pour des passionné</p>
+    </div>
 </body>
 
 </html>
