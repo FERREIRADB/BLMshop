@@ -33,3 +33,27 @@ a{
 .meilleureOffre4{
     color: gray;
 }
+
+.img{
+    width: 220px;
+    height: 220px;
+    border-radius: 9px;
+}
+
+.text{
+    width: 220px;
+    height: 150px;
+    padding: 2%;
+}
+.produits{
+    margin: 2%;
+    text-decoration: none;
+    color: black;
+    border: 0.5px solid rgba(0, 0, 0, 0.397);
+    border-radius: 9px;
+}
+
+.produits:hover{
+    opacity: 80%;
+    color : black;
+}

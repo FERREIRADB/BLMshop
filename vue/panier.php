@@ -1,6 +1,5 @@
-<?php 
+<?php
 include_once('../modele/fonctions.php');
-
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $idProduits = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
 $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
@@ -21,10 +20,8 @@ $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
 </head>
 
 <body>
-
-<?php include 'include/navbar.php' ?>
+    <?php include 'include/navbar.php' ?>
     <main>
-        
         <?php
         if (!isset($_SESSION['user'])) {
             $host = $_SERVER['HTTP_HOST'];
@@ -33,29 +30,20 @@ $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
             header("Location: http://$host$uri/$extra");
             exit;
         }
-        
-    if ($idProduits != null) {
-        
-        $statement = getDb()->prepare("INSERT INTO panier (idUser, idProduits) VALUES (?, ?)");
-        $statement->execute([$_SESSION['user_id'], $idProduits]);
-    }
-    if ($id != null) {
-        
-        deleteArticlePanier($id);
-    }
-    if ($idUser != null) {
-        
-        viderPanier($idUser);
-    }
 
-        ?>
+        if ($idProduits != null) {
 
-                    </main>
-    <form action="" method="post">
-        </form>
-        
+            $statement = getDb()->prepare("INSERT INTO panier (idUser, idProduits) VALUES (?, ?)");
+            $statement->execute([$_SESSION['user_id'], $idProduits]);
+        }
+        if ($id != null) {
+            deleteArticlePanier($id);
+        }
+        if ($idUser != null) {
+            viderPanier($idUser);
+        } ?>
         <article>
-            <?= afficherPanier()?>
+            <?= afficherPanier() ?>
         </article>
     </main>
     <footer>

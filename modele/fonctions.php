@@ -14,23 +14,27 @@ function getDb()
     ));
 }
 
-//permet de cree les differentes div dans la page produis et qui affiche les produits avec la bdd
+//page produits 
+
 function produitsDiv($param)
 {
 
     foreach (getDb()->query($param) as $row) {
         echo
-        '<a  href="./detail.php?idProduits=' . $row['idProduits'] . '"
-                <div class="" style="width:550px; margin:1%; padding-left:5%; text-decoration: none;">
-                    <img class="card-img-top" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
-                    <div style="color:black;" class="card-body">
-                    <h5 class="card-title">' . $row['name'] . '</h5>
-                    <h6 class="meilleureOffre">Meilleure offre</h6>
-                    <h4>' . number_format($row['price'], 0, '', '\'') . '$</h4>
-                    </div>
-                    </div></a>';
+        '<a class="produits" href="./detail.php?idProduits=' . $row['idProduits'] . '">
+            <div class="img">
+                <img class="img" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
+            </div>
+            <div class="text">
+                <h5 class="card-title">' . $row['name'] . '</h5>
+                <h6 class="meilleureOffre">Meilleure offre</h6>
+                <h4>' . number_format($row['price'], 0, '', '\'') . '$</h4>
+            </div>
+        </a>';
     }
 }
+
+//Page about
 
 function createurs()
 {
@@ -50,6 +54,8 @@ function createurs()
               </div>';
     }
 }
+
+//page detail
 
 function detailProduit()
 {
@@ -101,8 +107,10 @@ function detailProduit()
     echo '</div>';
 }
 
+//page panier
+
 function afficherPanier()
-{
+{   
 
     global $pdo;
     $total = 0;
@@ -120,9 +128,8 @@ function afficherPanier()
                     <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="panier.php?idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
                         <span style="font-size: 15px;margin:10px" class="pull-right">Total : $' . number_format($total, 0, '', '\'') . '</span>
                        
-                        <img class="petit_panier" src="img/panier.png" alt="panier" style="width: 30px;">
+                        <img class="petit_panier" src="../img/panier.png" alt="panier" style="width: 30px;">
                     </div>';
-
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         echo '<div class="ibox-content">
                                         <div class="table-responsive">
@@ -136,7 +143,7 @@ function afficherPanier()
                                                         </td>
                                                         <td class="desc">
                                                             <h3>
-                                                            <a href="#" class="text-navy">
+                                                            <a href="detail.php?idProduits='. $row['idProduits'] .'" class="text-navy">
                                                             ' . $row['name'] . '
                                                             </a>
                                                             <div class="m-t-sm">
