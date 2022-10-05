@@ -72,7 +72,6 @@ function detailProduit()
     echo '      <img src="../img/BLMshopLogo.png" alt="logo" class="card-logo">';
     echo '      <img src="../img/' . $detailProduit->nameImage . '" alt="Voiture" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
     echo '      <div class="product-detail">';
-    echo '        <h2>' . $detailProduit->name;
     echo '      </div>';
     echo '      <span class="back-text">';
     echo '              BLMshop';
@@ -95,7 +94,7 @@ function detailProduit()
     echo '        <span class="product-price" style="margin-top:10px; margin-left:160px">';
 
     if (isset($_SESSION['user'])) {
-        echo '                <a style="color:white; font-size:23px;" href="panier.php?idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
+        echo '                <a style="color:white; font-size:23px; text-decoration:none;" href="panier.php?idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
     } else {
         echo '<span style="color:red; font-size:19px;">Veuillez vous connecter pour ajouter ce produit au panier</span>';
     }
@@ -202,5 +201,17 @@ function deleteArticlePanier($id)
         $param = [$id];
         $statement->execute($param);
         return $statement;
+    }
+}
+
+
+
+
+
+
+function categorie(){
+    global $pdo;
+    foreach ($pdo->query('SELECT * FROM categories') as $row) {
+        echo '<a  href="produits.php?data='.$row['nameCategories'].'">'.$row['nameCategories'].'</a>';
     }
 }

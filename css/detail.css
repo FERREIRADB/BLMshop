@@ -25,19 +25,23 @@
     height: 252px;
     background: #fa782e;
     /* Old browsers */
-    background: -moz-linear-gradient(-45deg,  #512efa 20%, #6c757d 83%);
+    background: -moz-linear-gradient(-45deg,  #d3d2d2 20%, #1127e9 83%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg,  #512efa 20%, #6c757d 83%);
+    background: -webkit-linear-gradient(-45deg,  #d3d2d2 20%, #1127e9 83%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg,  #512efa 20%, #6c757d 83%);
+    background: linear-gradient(135deg,  #d3d2d2 20%, #1127e9 83%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
     border-radius: 25px 25px 0 0;
+    border-right: 0.5px solid gray;
+    border-left: 0.5px solid gray;
+    border-top: 0.5px solid gray;
+    
   }
   
   .card-logo {
-    width: 55px;
+    width: 125px;
     margin: 20px;
   }
   
@@ -67,14 +71,19 @@
     font-size: 125px;
     font-weight: 900;
     margin-left: -7px;
-    margin-top: -12px;
-    opacity: 0.1;
+    margin-top: -45px;
+    opacity: 0.2;
+    
   }
   
   .card-body {
-    height: 255px;
+    height: 205px;
     background: #fff;
     border-radius: 0 0 25px 25px;
+    border-right: 0.5px solid gray;
+    border-left: 0.5px solid gray;
+    border-bottom: 0.5px solid gray;
+    padding-top: 50px;
   }
   
   .product-title {
@@ -96,7 +105,7 @@
     font-size: 10px;
     font-weight: 300;
     color: #fff;
-    background: #11e95b;
+    background: #1127e9;
     padding: 2px 5px;
     border-radius: 4px;
     top: -2px;
@@ -192,7 +201,7 @@
   }
   
   .ul-color li a.green {
-    background: #11e95b;
+    background: #1127e9;
   }
   
   .ul-color li a.yellow {
@@ -213,7 +222,7 @@
   
   .product-price {
     position: absolute;
-    background: #11e95b;
+    background: #1127e9;
     padding: 7px 20px;
     text-align: center;
     display: inline-block;
@@ -223,7 +232,7 @@
     border-radius: 7px;
     margin-top: -13px;
     margin-left: -5px;
-    box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
+    box-shadow: -10px 10px 15px -10px #1127e9;
   }
   
   .product-price b {
