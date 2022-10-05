@@ -92,7 +92,7 @@ function detailProduit()
     echo '                USD<b>' . number_format($detailProduit->price) . '</b>';
     echo '              </span>';
     echo '              </span>';
-    echo '        <span class="product-price" style="margin-top:10px; margin-left:200px">';
+    echo '        <span class="product-price" style="margin-top:10px; margin-left:160px">';
 
     if (isset($_SESSION['user'])) {
         echo '                <a style="color:white; font-size:23px;" href="panier.php?idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
