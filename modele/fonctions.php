@@ -241,13 +241,6 @@ function categorie()
     }
 }
 
-function ProduitAccueil($param)
-{
-    foreach (getDb()->query($param) as $row) {
-        
-}
-}
-
 function produitsAlea()
 {
     global $pdo;
@@ -256,101 +249,43 @@ function produitsAlea()
     $row = $statement->fetchAll(PDO::FETCH_ASSOC);
     $tableauProduitsAelat = [];
     //$arrayName = array('' => , );
-    for ($i = 0; $i < 1; $i++) {
-        $chiffrealea = rand(0, 11);
-
-        foreach ($tableauProduitsAelat as $key => $value) {
-            if (in_array($row[$chiffrealea]['lastName'], $tableauProduitsAelat)) {
-                $chiffrealea = rand(0, 14);
-            }
-        }
-        echo '
-        <section class="section-products">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="header">
-                        <h3>Featured Product</h3>
-                        <h2>Popular Products</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-1" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Here Product Title</h3>
-                            <h4 class="product-old-price">$79.99</h4>
-                            <h4 class="product-price">$49.99</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-2" class="single-product">
-                        <div class="part-1">
-                            <span class="discount">15% off</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Here Product Title</h3>
-                            <h4 class="product-price">$49.99</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-3" class="single-product">
-                        <div class="part-1">
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Here Product Title</h3>
-                            <h4 class="product-old-price">$79.99</h4>
-                            <h4 class="product-price">$49.99</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-4" class="single-product">
-                        <div class="part-1">
-                            <span class="new">new</span>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="part-2">
-                            <h3 class="product-title">Here Product Title</h3>
-                            <h4 class="product-price">$49.99</h4>
-                        </div>
-                    </div>
+    echo '
+    <section class="section-products">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="header">
+                    <h3>Featured Product</h3>
+                    <h2>Popular Products</h2>
                 </div>
             </div>
         </div>
-    </section>';    
+        <div class="row">';
+    for ($i = 0; $i < 4; $i++) {
+        $chiffrealea = rand(0, 7);
+
+        foreach ($tableauProduitsAelat as $key => $value) {
+            if (in_array($row[$chiffrealea]['lastName'], $tableauProduitsAelat)) {
+                $chiffrealea = rand(0, 7);
+            }
+        }
+            echo '<!-- Single Product -->
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div id="product-' .$row[$chiffrealea]['idProduits'].  '" class="single-product">
+                        <div class="part-1"> 
+                        </div>
+                        <div class="part-2">
+                            <h3 class="product-title"> ' . $row[$chiffrealea]['name'] . '</h3>
+                            <h4 class="product-price">' . $row[$chiffrealea]['price'] . '</h4>
+                        </div>
+                    </div>
+                </div>
+            ';
         $tableauProduitsAelat[] = $row[$chiffrealea]['lastName'];
     }
+    echo '
+    </div>
+    </div>
+    </section>';    
+
 }
