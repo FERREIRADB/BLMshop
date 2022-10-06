@@ -41,6 +41,9 @@
     <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsAlea() ?></article>
 
 
+    <?php
+    include "include/footer.php";
+    ?>
 
 </body>
 

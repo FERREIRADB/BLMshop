@@ -255,8 +255,7 @@ function produitsAlea()
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">
                 <div class="header">
-                    <h3>Featured Product</h3>
-                    <h2>Popular Products</h2>
+                    <h2>Quelques produits</h2>
                 </div>
             </div>
         </div>
@@ -276,7 +275,7 @@ function produitsAlea()
                         </div>
                         <div class="part-2">
                             <h3 class="product-title"> ' . $row[$chiffrealea]['name'] . '</h3>
-                            <h4 class="product-price">' . $row[$chiffrealea]['price'] . '</h4>
+                            <h4 class="product-price">' .number_format($row[$chiffrealea]['price'], 0, '', '\''). '</h4>
                         </div>
                     </div>
                 </div>
