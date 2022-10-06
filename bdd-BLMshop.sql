@@ -75,6 +75,11 @@ CREATE TABLE `produits` (
   `name` varchar(255) NOT NULL DEFAULT '0',
   `nameImage` varchar(255) NOT NULL DEFAULT '0',
   `price` int(11) NOT NULL DEFAULT 0,
+  `puissance` int(11) NOT NULL DEFAULT '0',
+  `couple` int(11) NOT NULL DEFAULT '0',
+  `moteur` varchar(255) NOT NULL DEFAULT '0',
+  `consoVille` int(11) NOT NULL DEFAULT '0',
+  `consoAuto` int(11) NOT NULL DEFAULT '0',
   `productType` varchar(255) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -82,17 +87,35 @@ CREATE TABLE `produits` (
 -- Déchargement des données de la table `produits`
 --
 
-INSERT INTO `produits` (`idProduits`, `name`, `nameImage`, `price`, `productType`) VALUES
-(1, 'Bequet M Carbon', 'spoiler-arriere-en-carbone-bmw-m4-cs.jpg', 200, 'aileron'),
-(2, 'Volant en carbone', 'volant_carbone.png', 800, 'volant'),
-(3,'aileron en carbone','aileron_carbone.png', 700 ,'aileron'),
-(4,'','',,''),
-(5,'','',,''),
-(6,'','',,''),
-(7,'','',,''),
-(8,'','',,''),
-(9,'','',,''),
-;
+INSERT INTO `produits` (`idProduits`,`name`, `nameImage`, `price`,`puissance`,`couple`,`moteur`,`consoVille`,`consoAuto`, `productType`) VALUES
+(1,'Bmw M1','BMW-1M.png',55700,340,450,'6 Cylindres 3.0L',10.9,6.7,'Origine'),
+(2,'Bmw M3 F80','bmw-m3-f80.png',73400,430,550,'6 Cylindres 3.0L',12,6.9,'Origine'),
+(3,'Bmw M3 G80','bmw-m3-g80.png',105250,480,550,'6 Cyindres 3.0L TwinTurbo',12.2,8.5,'Origine'),
+(4,'Bmw M4 F82','bmw-m4-f82.png',159900,430,550,'6 cylindres 3.0L Bi-Turbo',12,6.9,'Origine'),
+(5,'Bmw M4 F82 Tuned','BMW-M4-F82-Tuning.png',189900,520,710,'6 cylindres 3.0L BiTurbo',13.1,8.2,'Préparé'),
+(6,'Bmw M4 G82','bmw-m4-g82.png',158990,350,550,'6 Cyindres 3.0L TwinTurbo',16,7.8,'Origine'),
+(7,'Bmw M6','bmw-m6.png',153750,600,700,'V8 4.4L Bi-Turbo',14.3,8,'Origine');
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categorie`
+--
+
+CREATE TABLE `categorie` (
+  `idCategorie` int(11) NOT NULL,
+  `nameCategorie` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`idCategorie`,`nameCategorie`) VALUES
+(1,'Origine'),
+(2,'Préparé');
 
 
 -- --------------------------------------------------------
