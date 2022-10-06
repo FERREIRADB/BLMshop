@@ -19,7 +19,7 @@
     ?>
     <ol>
         <div>
-            <?php //categorie(); 
+            <?php categorie(); 
             ?>
         </div>
     </ol>

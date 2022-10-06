@@ -105,7 +105,7 @@ INSERT INTO `produits` (`idProduits`,`name`, `nameImage`, `price`,`puissance`,`c
 
 CREATE TABLE `categorie` (
   `idCategorie` int(11) NOT NULL,
-  `nameCategorie` int(11) NOT NULL
+  `nameCategorie` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
