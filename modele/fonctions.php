@@ -18,8 +18,7 @@ function getDb()
 
 function produitsDiv($param)
 {
-    echo '<div class="container-fluid d-flex justify-content-center">
-    <div class="row mt-5">';
+    echo '<div class="container-fluid d-flex justify-content-center"><div class="row mt-5">';
     foreach (getDb()->query($param) as $row) {
         /*echo
         '<a class="produits" href="./detail.php?idProduits=' . $row['idProduits'] . '">
@@ -60,22 +59,12 @@ function produitsDiv($param)
                                 </div>
                             </div>
                         </div>
-                        <small class="text-muted key pl-3">Standard key Features</small>
-                        <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div>
-                        <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div></a>
                     </div>
                 </div>
             </div>';
     }
-    echo '</div>
-    </div>';
-
-
-
-
-
-    /*
-*/
+    echo '</div></div>';
 }
 
 //Page about
