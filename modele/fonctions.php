@@ -261,16 +261,16 @@ function produitsAlea()
         </div>
         <div class="row">';
     for ($i = 0; $i < 4; $i++) {
-        $chiffrealea = rand(0, 7);
+        $chiffrealea = rand(0, 6);
 
         foreach ($tableauProduitsAelat as $key => $value) {
-            if (in_array($row[$chiffrealea]['lastName'], $tableauProduitsAelat)) {
-                $chiffrealea = rand(0, 7);
+            if (in_array($row[$chiffrealea]['name'], $tableauProduitsAelat)) {
+                $chiffrealea = rand(0, 6);
             }
         }
             echo '<!-- Single Product -->
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div id="product-' .$row[$chiffrealea]['idProduits'].  '" class="single-product">
+                    <div id="product-'.$row[$chiffrealea]['idProduits'].'" class="single-product">
                         <div class="part-1"> 
                         </div>
                         <div class="part-2">
@@ -280,7 +280,7 @@ function produitsAlea()
                     </div>
                 </div>
             ';
-        $tableauProduitsAelat[] = $row[$chiffrealea]['lastName'];
+        $tableauProduitsAelat[] = $row[$chiffrealea]['name'];
     }
     echo '
     </div>
