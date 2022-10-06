@@ -34,11 +34,14 @@
         <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
         <p>Fait par des passionné pour des passionné</p>
     </div>
+    <?php
+        $request = "select * from produits ";
+    ?>
+
+    <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsAlea() ?></article>
 
 
 
-
-    
 </body>
 
 </html>
