@@ -53,25 +53,38 @@ a:hover {
 }
 
 .section-products #product-1 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../img/produits/BMW-1M.png") no-repeat center;
     background-size: cover;
 		transition: all 0.3s;
 }
 
 .section-products #product-2 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../img/produits/bmw-m3-f80.png") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-3 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
+    background: url("../img/produits/bmw-m3-g80.png") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-4 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
+    background: url("../img/produits/bmw-m4-f82.png") no-repeat center;
     background-size: cover;
 }
+.section-products #product-5 .part-1::before {
+    background: url("../img/produits/BMW-M4-F82-Tuning.png") no-repeat center;
+    background-size: cover;
+}
+.section-products #product-6 .part-1::before {
+    background: url("../img/produits/bmw-m4-g82.png") no-repeat center;
+    background-size: cover;
+}
+.section-products #product-7 .part-1::before {
+    background: url("../img/produits/bmw-m6.png") no-repeat center;
+    background-size: cover;
+}
+
 
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
