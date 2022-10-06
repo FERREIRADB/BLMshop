@@ -20,17 +20,6 @@ function produitsDiv($param)
 {
     echo '<div class="container-fluid d-flex justify-content-center"><div class="row mt-5">';
     foreach (getDb()->query($param) as $row) {
-        /*echo
-        '<a class="produits" href="./detail.php?idProduits=' . $row['idProduits'] . '">
-            <div class="img">
-                <img class="img" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
-            </div>
-            <div class="text">
-                <h5 class="card-title">' . $row['name'] . '</h5>
-                <h6 class="meilleureOffre">Meilleure offre</h6>
-                <h4>' . number_format($row['price'], 0, '', '\'') . '$</h4>
-            </div>
-        </a>';*/
         echo '
             <div class="col-sm-4">
                 <div class="card">
