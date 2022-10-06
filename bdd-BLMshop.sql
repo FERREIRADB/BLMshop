@@ -85,6 +85,13 @@ CREATE TABLE `produits` (
 INSERT INTO `produits` (`idProduits`, `name`, `nameImage`, `price`, `productType`) VALUES
 (1, 'Bequet M Carbon', 'spoiler-arriere-en-carbone-bmw-m4-cs.jpg', 200, 'aileron'),
 (2, 'Volant en carbone', 'volant_carbone.png', 800, 'volant'),
+(3,'aileron en carbone','aileron_carbone.png', 700 ,'aileron'),
+(4,'','',,''),
+(5,'','',,''),
+(6,'','',,''),
+(7,'','',,''),
+(8,'','',,''),
+(9,'','',,''),
 ;
 
 
