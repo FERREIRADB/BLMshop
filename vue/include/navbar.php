@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="./accueil.php"><img src="../img/BLMshopLogo.png" style="width:50px; height:50px;"></a>
+    <a class="navbar-brand" href="./accueil.php"><img src="../img/logo/BLMshopLogo.png" style="width:50px; height:50px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

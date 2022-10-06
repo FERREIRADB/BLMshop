@@ -35,22 +35,22 @@ function produitsDiv($param)
                         <div class="d-flex flex-row justify-content-between px-3 pb-4">
                             <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small class="text-muted">L/100KM&ast;</small></div>
                             <div class="d-flex flex-column">
-                                <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                <h5 class="mb-0">' . $row['consoVille'] . '/' . $row['consoAuto'] . '</h5><small class="text-muted text-right">(city/Hwy)</small>
                             </div>
                         </div>
                         <div class="d-flex flex-row justify-content-between p-3 mid">
                             <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
                                 <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
-                                    <div class="d-flex flex-column ml-1"><small class="ghj">1.4L MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    <div class="d-flex flex-column ml-1"><small class="ghj">' . $row['moteur'] . '</small></div>
                                 </div>
                             </div>
                             <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
                                 <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                    <h6 class="ml-1">135 hp&ast;</h6>
+                                    <h6 class="ml-1">' . $row['puissance'] . ' hp / ' . $row['couple'] . ' nm</h6>
                                 </div>
                             </div>
                         </div>
-                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div></a>
+                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>Ajouter au panier</small></button></div></a>
                     </div>
                 </div>
             </div>';
@@ -93,8 +93,8 @@ function detailProduit()
     echo '  <div class="container">';
     echo '  <div class="cardDetail" style="border-top: none; border-radius:25px">';
     echo '    <div class="card-head">';
-    echo '      <img src="../img/BLMshopLogo.png" alt="logo" class="card-logo">';
-    echo '      <img src="../img/' . $detailProduit->nameImage . '" alt="Voiture" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
+    echo '      <img src="../img/logo/BLMshopLogo.png" alt="logo" class="card-logo">';
+    echo '      <img src="../img/produits/' . $detailProduit->nameImage . '" alt="Voiture" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
     echo '      <div class="product-detail">';
     echo '      </div>';
     echo '      <span class="back-text">';
@@ -151,7 +151,7 @@ function afficherPanier()
                     <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="panier.php?idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
                         <span style="font-size: 15px;margin:10px" class="pull-right">Total : $' . number_format($total, 0, '', '\'') . '</span>
                        
-                        <img class="petit_panier" src="../img/panier.png" alt="panier" style="width: 30px;">
+                        <img class="petit_panier" src="../img/logo/panier.png" alt="panier" style="width: 30px;">
                     </div>';
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         echo '<div class="ibox-content">
@@ -161,7 +161,7 @@ function afficherPanier()
                                                     <tr>
                                                         <td width="90">
                                                             <div>
-                                                            <img class="card-img-top" src="../img/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
+                                                            <img class="card-img-top" src="../img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
                                                             </div>
                                                         </td>
                                                         <td class="desc">
