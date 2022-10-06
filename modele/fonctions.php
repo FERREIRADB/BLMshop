@@ -16,6 +16,8 @@ function getDb()
 
 //page produits 
 
+
+
 function produitsDiv($param)
 {
     echo '<div class="container-fluid d-flex justify-content-center"><div class="row mt-5">';
@@ -23,7 +25,7 @@ function produitsDiv($param)
         echo '
             <div class="col-sm-4">
                 <div class="card">
-                    <img src="../img/' . $row['nameImage'] . '" class="card-img-top" width="100%">
+                    <img src="../img/produits/' . $row['nameImage'] . '" class="img-produits">
                     <div class="card-body pt-0 px-0">
                         <div class="d-flex flex-row justify-content-between mb-0 px-3">
                             <small class="text-muted mt-1">STARTING AT</small>
