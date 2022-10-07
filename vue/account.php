@@ -92,7 +92,7 @@ if (isset($_POST['btn-save'])) {
     </div>
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-            <img class="mt-5" width="150px" src="../img/BLMshopLogo.png">
+            <img class="mt-5" width="150px" src="../img/logo/BLMshopLogo.png">
             <form action="" method="post">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -123,6 +123,7 @@ if (isset($_POST['btn-save'])) {
     </div>
     </div>
     </div>
+    <?php include "include/footer.php";?>
 
 </body>
 

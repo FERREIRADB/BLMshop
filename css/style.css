@@ -20,6 +20,7 @@ a{
 
 .card{
     margin: 10px;
+    width: 540px;
 }
 
 .card:hover{

@@ -10,5 +10,6 @@
 <body>
 <?php include "include/navbar.php";?>
     <?php createurs(); ?>
+    <?php include "include/footer.php";?>
 </body>
 </html>
