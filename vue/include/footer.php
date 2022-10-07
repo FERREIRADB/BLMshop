@@ -30,17 +30,17 @@
         </div>
         <!--Grid column-->
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="text-align:center;">
           <h5 class="text-uppercase mb-4">Nos réseaux</h5>
           <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Instagram</a>
+            <li class="mb-2" >
+              <a href="#!" class="text-white" ><i class="fa-brands fa-instagram fa-2xl" style="margin-bottom:20px;"></i></a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
+              <a href="#!" class="text-white"></i><i class="fa-brands fa-snapchat fa-2xl" style="margin-bottom:20px;"></i></a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Facebook</a>
+              <a href="#!" class="text-white"></i><i class="fab fa-facebook-square fa-2xl"></i></a>
             </li>
           </ul>
         </div>
@@ -50,23 +50,18 @@
           <h5 class="text-uppercase mb-4">Nos pages</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="about.php" class="text-white"><i class="fas fa-paw pe-3"></i>Nos infos</a>
+              <a href="Accueil.php" class="text-white"></i>Accueil</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Instagram</a>
+              <a href="produits.php" class="text-white"></i>Produits</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
+              <a href="panier.php" class="text-white"></i><i class="fa-solid fa-cart-shopping"></i>Panier</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Facebook</a>
+              <a href="about.php" class="text-white"></i>A propos de nous</a>
             </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Instagram</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
-            </li>
+
           </ul>
         </div>
         <!--Grid column-->
@@ -96,5 +91,6 @@
       © 2022 Copyright:
       <a class="text-white" href="#">BLMshop</a>
     </div>
+    <script src="https://kit.fontawesome.com/e4154a0fe6.js" crossorigin="anonymous"></script>
     <!-- Copyright -->
   </footer>

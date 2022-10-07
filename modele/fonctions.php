@@ -65,12 +65,12 @@ function createurs()
 
     $nomCreateurs = [
         "Lucas" => "Fonctionnalités php",
-        "Bryan" => "Il fait des trucs tkt"
+        "Bryan" => "design complet du site"
     ];
 
     foreach ($nomCreateurs as $key => $value) {
-        echo ' <div class="card" style="height:23rem; width: 16rem; margin:15px;">
-                    <img class="card-img-top" src="../img/pp' . $key . '.png" height="60%">
+        echo ' <div class="card" style="height:23rem; width: 16rem; margin:15px; display:inline-block;">
+                    <img class="card-img-top" src="../img/pp/pp' . $key . '.png" height="60%">
                 <div class="card-body">
                     <h5 class="card-title">' . $key . '</h5>
                     <h7 style="color:gray;">' . $value . '</h7>
