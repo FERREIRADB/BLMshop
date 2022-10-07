@@ -42,6 +42,7 @@
         }
         ?>
     <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsDiv($request) ?></article>
+    <?php include "include/footer.php";?>
 
 </body>
 </html>

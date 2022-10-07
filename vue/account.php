@@ -123,6 +123,7 @@ if (isset($_POST['btn-save'])) {
     </div>
     </div>
     </div>
+    <?php include "include/footer.php";?>
 
 </body>
 

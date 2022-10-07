@@ -46,8 +46,8 @@ $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
             <?= afficherPanier() ?>
         </article>
     </main>
-    <footer>
-    </footer>
+    <?php include "include/footer.php";?>
+
 </body>
 
 </html>

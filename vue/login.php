@@ -100,6 +100,8 @@ if (isset($_POST['submit'])) {
             <p class="pt-2"> Create an  <a href="inscription.php">account</a></p>
         </form>
     </div>
+    <?php include "include/footer.php";?>
+
 </body>
 
 </html>

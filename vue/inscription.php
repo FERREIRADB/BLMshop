@@ -123,6 +123,8 @@ if (isset($_POST['submit'])) {
             <p class="pt-2"> Back to <a href="login.php">Login</a></p>
         </form>
     </div>
+    <?php include "include/footer.php";?>
+
 </body>
 
 </html>

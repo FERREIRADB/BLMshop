@@ -20,6 +20,8 @@
 <body>
     <?php include 'include/navbar.php' ?>
     <?= detailProduit() ?>
+    <?php include "include/footer.php";?>
+
 </body>
 
 </html>
