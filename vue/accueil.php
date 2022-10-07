@@ -19,7 +19,7 @@
     ?>
     <ol>
         <div>
-            <?php categorie();
+            <?php //categorie();
             ?>
         </div>
     </ol>
@@ -28,12 +28,10 @@
         <p>Fait par des passionnés pour des passionnés</p>
     </div>
     <header>
-            <div>
-                <!-- The HTML5 video element that will create the background video on the header -->
-                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; margin: 0 auto;">
-                    <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
-                </video>
-            </div>
+        <!-- The HTML5 video element that will create the background video on the header -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; margin: 0 auto;">
+            <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
+        </video>
     </header>
 
     <?php

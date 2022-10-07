@@ -28,8 +28,8 @@ function produitsDiv($param)
                     <img src="../img/produits/' . $row['nameImage'] . '" class="img-produits">
                     <div class="card-body pt-0 px-0">
                         <div class="d-flex flex-row justify-content-between mb-0 px-3">
-                            <big class="text-muted mt-1">' . $row['name'] . '</big>
-                            <h6>&dollar;' . number_format($row['price'], 0, '', '\'') . '</h6>
+                            <small class="text-muted mt-1">STARTING AT</small>
+                            <h6>&dollar;' . number_format($row['price'], 0, '', '\'') . '&ast;</h6>
                         </div>
                         <hr class="mt-2 mx-3">
                         <div class="d-flex flex-row justify-content-between px-3 pb-4">
@@ -50,7 +50,7 @@ function produitsDiv($param)
                                 </div>
                             </div>
                         </div>
-                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>Voir en détail</small></button></div></a>
+                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>Ajouter au panier</small></button></div></a>
                     </div>
                 </div>
             </div>';
@@ -236,8 +236,8 @@ function deleteArticlePanier($id)
 function categorie()
 {
     global $pdo;
-    foreach ($pdo->query('SELECT * FROM categorie') as $row) {
-        echo '<a  href="produits.php?data=' . $row['nameCategorie'] . '">' . $row['nameCategorie'] . '</a>';
+    foreach ($pdo->query('SELECT * FROM categories') as $row) {
+        echo '<a  href="produits.php?data=' . $row['nameCategories'] . '">' . $row['nameCategories'] . '</a>';
     }
 }
 
