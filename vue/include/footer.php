@@ -75,9 +75,7 @@
             <li class="mb-2">
               <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
             </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Facebook</a>
-            </li>
+
           </ul>
         </div>
         <!--Grid column-->
