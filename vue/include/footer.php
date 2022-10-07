@@ -50,16 +50,16 @@
           <h5 class="text-uppercase mb-4">Nos pages</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="Accueil.php" class="text-white"></i>Accueil</a>
+              <a href="Accueil.php" class="text-white"></i><i class="fa-solid fa-house-chimney" style="margin-right:10px;"></i>Accueil</a>
             </li>
             <li class="mb-2">
-              <a href="produits.php" class="text-white"></i>Produits</a>
+              <a href="produits.php" class="text-white"></i><i class="fa-solid fa-shop"  style="margin-right:10px;"></i>Produits</a>
             </li>
             <li class="mb-2">
-              <a href="panier.php" class="text-white"></i><i class="fa-solid fa-cart-shopping"></i>Panier</a>
+              <a href="panier.php" class="text-white"></i><i class="fa-solid fa-cart-shopping" style="margin-right:10px;"></i>Panier</a>
             </li>
             <li class="mb-2">
-              <a href="about.php" class="text-white"></i>A propos de nous</a>
+              <a href="about.php" class="text-white"></i><i class="fa-solid fa-address-card" style="margin-right:10px;"></i>A propos de nous</a>
             </li>
 
           </ul>
