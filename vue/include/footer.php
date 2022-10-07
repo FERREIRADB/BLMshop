@@ -11,7 +11,7 @@
                  loading="lazy" />
           </div>
 
-          <p class="text-center">Homless animal shelter The budgetary unit of the Capital City of Warsaw</p>
+          <p class="text-center">Un site fait par des passionnés de BMW une marque qui nous portent vraiment a coeur de nous occuper</p>
 
           <ul class="list-unstyled d-flex flex-row justify-content-center">
             <li>
@@ -36,29 +36,17 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Animals</h5>
+          <h5 class="text-uppercase mb-4">Nos réseaux</h5>
 
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>When your pet is missing</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Instagram</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Recently found</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>How to adopt?</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Pets for adoption</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Material gifts</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Help with walks</a>
-            </li>
-            <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Volunteer activities</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Facebook</a>
             </li>
           </ul>
         </div>
@@ -66,26 +54,29 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Animals</h5>
+          <h5 class="text-uppercase mb-4">Nos pages</h5>
 
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>General information</a>
+              <a href="about.php" class="text-white"><i class="fas fa-paw pe-3"></i>Nos infos</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>About the shelter</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Instagram</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Statistic data</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Job</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Facebook</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Tenders</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Instagram</a>
             </li>
             <li class="mb-2">
-              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Contact</a>
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Snapchat</a>
+            </li>
+            <li class="mb-2">
+              <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Facebook</a>
             </li>
           </ul>
         </div>
@@ -97,10 +88,10 @@
 
           <ul class="list-unstyled">
             <li>
-              <p><i class="fas fa-map-marker-alt pe-2"></i>Warsaw, 57 Street, Poland</p>
+              <p><i class="fas fa-map-marker-alt pe-2"></i>CFPT Informatique</p>
             </li>
             <li>
-              <p><i class="fas fa-phone pe-2"></i>+ 01 234 567 89</p>
+              <p><i class="fas fa-phone pe-2"></i>+41 78 490 72 89</p>
             </li>
             <li>
               <p><i class="fas fa-envelope pe-2 mb-0"></i>contact@example.com</p>
@@ -115,8 +106,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2022 Copyright:
+      <a class="text-white" href="#">BLMshop</a>
     </div>
     <!-- Copyright -->
   </footer>

@@ -19,23 +19,25 @@
     ?>
     <ol>
         <div>
-            <?php categorie(); 
+            <?php categorie();
             ?>
         </div>
     </ol>
-    <header>
-        <!-- The HTML5 video element that will create the background video on the header -->
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; margin-top:100px;">
-            <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
-        </video>
-    </header>
-
     <div style="text-align:center;">
         <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
-        <p>Fait par des passionné pour des passionné</p>
+        <p>Fait par des passionnés pour des passionnés</p>
     </div>
+    <header>
+            <div>
+                <!-- The HTML5 video element that will create the background video on the header -->
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; margin: 0 auto;">
+                    <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
+                </video>
+            </div>
+    </header>
+
     <?php
-        $request = "select * from produits ";
+    $request = "select * from produits ";
     ?>
 
     <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsAlea() ?></article>
