@@ -27,13 +27,14 @@
         <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
         <p>Fait par des passionnés pour des passionnés</p>
     </div>
-    <header>
-        <!-- The HTML5 video element that will create the background video on the header -->
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; margin: 0 auto;">
+    <!--<header style="display:flex; justify-content:center;">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; display:flex; justify-content:center;">
             <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
         </video>
-    </header>
-
+    </header>-->
+    <div style="display:flex; justify-content:center;">
+        <iframe width="1800px" height="750px" src="https://www.youtube.com/embed/jPpucAll_Qk" title="YouTube video player" frameborder="0" autoplay="autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <?php
     $request = "select * from produits ";
     ?>

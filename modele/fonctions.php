@@ -28,29 +28,29 @@ function produitsDiv($param)
                     <img src="../img/produits/' . $row['nameImage'] . '" class="img-produits">
                     <div class="card-body pt-0 px-0">
                         <div class="d-flex flex-row justify-content-between mb-0 px-3">
-                            <small class="text-muted mt-1">STARTING AT</small>
-                            <h6>&dollar;' . number_format($row['price'], 0, '', '\'') . '&ast;</h6>
+                            <small class="text-muted mt-1">A PARTIR DE</small>
+                            <h6>&dollar;' . number_format($row['price'], 0, '', '\'') . '</h6>
                         </div>
                         <hr class="mt-2 mx-3">
                         <div class="d-flex flex-row justify-content-between px-3 pb-4">
-                            <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small class="text-muted">L/100KM&ast;</small></div>
+                            <div class="d-flex flex-column"><span class="text-muted">Conso. essence</span><small class="text-muted">L/100KM&ast;</small></div>
                             <div class="d-flex flex-column">
-                                <h5 class="mb-0">' . $row['consoVille'] . '/' . $row['consoAuto'] . '</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                <h5 class="mb-0">' . $row['consoVille'] . '/' . $row['consoAuto'] . '</h5><small class="text-muted text-right">(Ville/Autoroute)</small>
                             </div>
                         </div>
                         <div class="d-flex flex-row justify-content-between p-3 mid">
-                            <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                            <div class="d-flex flex-column"><small class="text-muted mb-1">MOTEUR</small>
                                 <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px" height="25px">
                                     <div class="d-flex flex-column ml-1"><small class="ghj">' . $row['moteur'] . '</small></div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                            <div class="d-flex flex-column"><small class="text-muted mb-2">CHEVAUX</small>
                                 <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
-                                    <h6 class="ml-1">' . $row['puissance'] . ' hp / ' . $row['couple'] . ' nm</h6>
+                                    <h6 class="ml-1">' . $row['puissance'] . ' CH / ' . $row['couple'] . ' NM</h6>
                                 </div>
                             </div>
                         </div>
-                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>Ajouter au panier</small></button></div></a>
+                        <a href="./detail.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" style="background-color:#1127e9; border-color:#1127e9;"><small>Ajouter au panier</small></button></div></a>
                     </div>
                 </div>
             </div>';

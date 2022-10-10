@@ -10,23 +10,6 @@
                  loading="lazy" />
           </div>
           <p class="text-center">Un site fait par des passionnés de BMW une marque qui nous portent vraiment a coeur de nous occuper</p>
-          <ul class="list-unstyled d-flex flex-row justify-content-center">
-            <li>
-              <a class="text-white px-2" href="#!">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-            </li>
-            <li>
-              <a class="text-white px-2" href="#!">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a class="text-white ps-2" href="#!">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </li>
-          </ul>
         </div>
         <!--Grid column-->
         <!--Grid column-->
