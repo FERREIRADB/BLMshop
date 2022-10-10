@@ -1,5 +1,5 @@
-<div  style="display:flex; justify-content:center;">
-  <div id="carouselId" class="carousel slide" data-bs-ride="carousel"style="display:flex; justify-content:center;">
+<div style="display:flex; justify-content:center; width: auto;">
+  <div id="carouselId" class="carousel slide" data-bs-ride="carousel" style="display:flex; justify-content:center;">
     <ol class="carousel-indicators">
       <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
       <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
