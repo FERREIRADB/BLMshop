@@ -282,15 +282,22 @@ function produitsAlea()
             }
         }
             echo '<!-- Single Product -->
+            
                 <div class="col-md-6 col-lg-4 col-xl-3">
+                
                     <div id="product-'.$row[$chiffrealea]['idProduits'].'" class="single-product">
+                    
                         <div class="part-1"> 
                         </div>
                         <div class="part-2">
+                        <a href="detail.php?idProduits='.$row[$chiffrealea]['idProduits'].'" style="text-decoration: none; color: black;">
                             <h3 class="product-title"> ' . $row[$chiffrealea]['name'] . '</h3>
+                            </a>
                             <h4 class="product-price">' .number_format($row[$chiffrealea]['price'], 0, '', '\''). '</h4>
                         </div>
+                        
                     </div>
+                    
                 </div>
             ';
         $tableauProduitsAelat[] = $row[$chiffrealea]['name'];
