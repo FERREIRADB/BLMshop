@@ -1,9 +1,9 @@
 <?php
 include_once('../modele/fonctions.php');
+var_dump($_SESSION);
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $idProduits = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
-$idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
-?>
+$idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,9 +32,10 @@ $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
         }
 
         if ($idProduits != null) {
-
             $statement = getDb()->prepare("INSERT INTO panier (idUser, idProduits) VALUES (?, ?)");
             $statement->execute([$_SESSION['user_id'], $idProduits]);
+
+
         }
         if ($id != null) {
             deleteArticlePanier($id);

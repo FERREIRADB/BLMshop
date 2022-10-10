@@ -132,11 +132,46 @@ function detailProduit()
 
 //page panier
 
+function affichagePanier($row)
+{
+    echo '<div class="ibox-content">
+                <div class="table-responsive">
+                    <table class="table shoping-cart-table">
+                        <tbody>
+                            <tr>
+                                <td width="90">
+                                    <div>
+                                    <img class="card-img-top" src="../img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
+                                    </div>
+                                </td>
+                                <td class="desc">
+                                    <h3>
+                                    <a href="detail.php?idProduits=' . $row['idProduits'] . '" class="text-navy">
+                                    ' . $row['name'] . '
+                                    </a>
+                                    <div class="m-t-sm">
+                                        <a href="panier.php?id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>
+                       </div>
+                                </td>
+                                <td>
+                                    <h4>
+                                        $' . number_format($row['price'], 0, '', '\'') . '
+                                    </h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>';
+}
+
+
 function afficherPanier()
 {
 
     global $pdo;
     $total = 0;
+    
 
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         $total += $row['price'];
@@ -154,39 +189,17 @@ function afficherPanier()
                         <img class="petit_panier" src="../img/logo/panier.png" alt="panier" style="width: 30px;">
                     </div>';
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
-        echo '<div class="ibox-content">
-                                        <div class="table-responsive">
-                                            <table class="table shoping-cart-table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td width="90">
-                                                            <div>
-                                                            <img class="card-img-top" src="../img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
-                                                            </div>
-                                                        </td>
-                                                        <td class="desc">
-                                                            <h3>
-                                                            <a href="detail.php?idProduits=' . $row['idProduits'] . '" class="text-navy">
-                                                            ' . $row['name'] . '
-                                                            </a>
-                                                            <div class="m-t-sm">
-                                                                <a href="panier.php?id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>';
-
-        echo '                                                    </div>
-                                                        </td>
-                                                        <td>
-                                                            <h4>
-                                                                $' . number_format($row['price'], 0, '', '\'') . '
-                                                            </h4>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                   
-                               ';
+        if (countProducts($_SESSION['user_id'], $row['idProduits']) <= 1) {
+            affichagePanier($row);
+        }
+        elseif (countProducts($_SESSION['user_id'], $row['idProduits']) > 1) {
+            echo countProducts($_SESSION['user_id'], $row['idProduits']);
+            affichagePanier($row);
+        break;
+        }
     }
+
+
     echo '
     <div class="ibox-content">
     <a href="paiement.php">
@@ -269,15 +282,22 @@ function produitsAlea()
             }
         }
             echo '<!-- Single Product -->
+            
                 <div class="col-md-6 col-lg-4 col-xl-3">
+                
                     <div id="product-'.$row[$chiffrealea]['idProduits'].'" class="single-product">
+                    
                         <div class="part-1"> 
                         </div>
                         <div class="part-2">
+                        <a href="detail.php?idProduits='.$row[$chiffrealea]['idProduits'].'" style="text-decoration: none; color: black;">
                             <h3 class="product-title"> ' . $row[$chiffrealea]['name'] . '</h3>
+                            </a>
                             <h4 class="product-price">' .number_format($row[$chiffrealea]['price'], 0, '', '\''). '</h4>
                         </div>
+                        
                     </div>
+                    
                 </div>
             ';
         $tableauProduitsAelat[] = $row[$chiffrealea]['name'];
@@ -287,4 +307,13 @@ function produitsAlea()
     </div>
     </section>';    
 
+}
+
+function countProducts($idUser, $idProduit) {
+    global $pdo;
+    $statement = $pdo->prepare("SELECT * FROM panier where idUser = ? AND idProduits = ?");
+    $statement->execute([$idUser, $idProduit]);
+    $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $nbProduit = count($row);
+    return $nbProduit;
 }
