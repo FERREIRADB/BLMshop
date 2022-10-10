@@ -1,32 +1,20 @@
-
-<!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel" style="margin:20px;">
-
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../img/carousel_bmw1.jpg" alt="Los Angeles" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="../img/carousel_bmw2.jpg" alt="Chicago" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="../img/carousel_bmw3.jpg" alt="New York" class="d-block w-100">
+<div  style="display:flex; justify-content:center;">
+  <div id="carouselId" class="carousel slide" data-bs-ride="carousel"style="display:flex; justify-content:center;">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+      <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+      <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox" >
+      <div class="carousel-item active" style="width:60%;">
+        <img src="../img/carousel/carousel_bmw1.jpg" class="w-60 d-block" alt="First slide">
+      </div>
+      <div class="carousel-item" style="width:60%;">
+        <img src="../img/carousel/carousel_bmw3.jpg" class="w-60 d-block" alt="Second slide">
+      </div>
+      <div class="carousel-item" style="width:60%;">
+        <img src="../img/carousel/carousel_bmw2.jpg" class="w-60 d-block" alt="Third slide">
+      </div>
     </div>
   </div>
-
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
 </div>
