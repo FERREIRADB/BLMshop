@@ -10,5 +10,8 @@ Avancement sur la page d’accueil. Nous avons présenté notre projet a Madame 
 J’ai terminé la page d'accueil, peaufiner la page produits avec la correction de certaines incohérences au niveau des card j'ai aussi fais une présentation de mon projet avec Lucas a monsieur Garcia. Ensuite j’ai commencer a avancer sur le paiement par paypal j’ai créer un compte paypal privé mais je commence a croire que je vais devoir en créer un professionnel si j’ai bien compris pour pouvoir utiliser paypal en moyens de paiement sur mon site j’ai un peu de mal à comprendre comment ça fonctionne j’ai trouver un lien git hub disponible sur le site de paypal je vais essayez de creuser de ce sens ce qui me parait plus accessible.
 LE LIEN POUR PAYPAL : https://github.com/paypal-examples/docs-examples/tree/main/standard-integration
 
-## 13.10.2022
+## 12.10.2022
 J’ai continué de travailler sur PayPal Madame Moro m’a aiguillez car j’avais trop de problème concernant le compte Paypal je dois continuer demain
+
+## 13.10.2022
+J'ai fini Paypal
