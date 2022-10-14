@@ -178,7 +178,7 @@ function afficherPanier()
     }
     echo '<div class="container">
     <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="row">
+        <div class="row" style="display:flex; justify-content:center;">
             <div class="col-md-9">
                 <div class="ibox">
                     <div class="ibox-title">
@@ -201,14 +201,7 @@ function afficherPanier()
 
 
     echo '
-    <div class="ibox-content">
-    <a href="paiement.php">
-        <button class="btn pull-right" style="font-size:15px; color:rgba(0, 196, 0, 0.75)">
-            <i class="fa fa fa-shopping-cart">
-            </i> 
-            Régler le paiement
-        </button>
-    </a>
+    <div class="ibox-content" style="display:flex; justify-content:center;">
     <a href="produits.php">
     <button class="btn btn-white" style="font-size:15px;"><i class="fa fa-arrow-left"></i> Continuer les achats</button>
     </a>

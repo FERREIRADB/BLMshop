@@ -46,6 +46,11 @@ $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);?>
         <article>
             <?= afficherPanier() ?>
         </article>
+
+        <?php
+            include "include/paiement.php";
+        ?>
+
     </main>
     <?php include "include/footer.php";?>
 

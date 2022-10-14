@@ -28,7 +28,7 @@
         <p>Fait par des passionnés pour des passionnés</p>
     </div>
     <div style="display:flex; justify-content:center;">
-        <iframe width="1800px" height="750px" src="https://www.youtube.com/embed/jPpucAll_Qk" title="YouTube video player" frameborder="0" autoplay="autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="1800px" height="750px" src="https://www.youtube.com/embed/jPpucAll_Qk?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="autoplay; loop;" allowfullscreen></iframe>
     </div>
     <?php
     $request = "select * from produits ";
