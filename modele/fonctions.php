@@ -325,9 +325,9 @@ function AfficherCategorie(){
 function AfficherModele(){
     global $pdo;
     foreach ($pdo->query('SELECT * FROM modele ORDER BY nameModele ASC') as $row)
-        echo '<li>
-            <a class="dropdown-item" href="modele.php?data='.$row['idModele'].'">'.$row['nameModele'].'</a>
-        </li>';
+        echo '
+            <a class="dropdown-item" href="produits.php?modele='.$row['idModele'].'">'.$row['nameModele'].'</a>
+        ';
 }
 
 function modele()

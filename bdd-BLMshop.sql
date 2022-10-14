@@ -94,7 +94,12 @@ INSERT INTO `produits` (`idProduits`,`name`, `nameImage`, `price`,`puissance`,`c
 (4,'Bmw M4 F82','bmw-m4-f82.png',159900,430,550,'6 cylindres 3.0L Bi-Turbo',12,6.9,'Origine'),
 (5,'Bmw M4 F82 Tuned','BMW-M4-F82-Tuning.png',189900,520,710,'6 cylindres 3.0L Bi-Turbo',13.1,8.2,'Préparé'),
 (6,'Bmw M4 G82','bmw-m4-g82.png',158990,350,550,'6 Cyindres 3.0L TwinTurbo',16,7.8,'Origine'),
-(7,'Bmw M6','bmw-m6.png',153750,600,700,'V8 4.4L Bi-Turbo',14.3,8,'Origine');
+(7,'Bmw M6','bmw-m6.png',153750,600,700,'V8 4.4L Bi-Turbo',14.3,8,'Origine'),
+(8,'Bmw M2','m2.png',71000,405,550,'6 cylindres 3.0L Bi-Turbo',13.8,10,'Origine'),
+(9,'Bmw M5','m5.jpg',115000,617,750,'V8 4.4L Bi-Turbo',14.5,8.2,'Origine'),
+(10,'Bmw 118i e87','Serie1_e87.jpg',7000,129,180,'4 Cylindre 2.0L',10.1,5.7,'Origine'),
+(11,'Bmw 118i f20','Serie1_f20.jpg',25690,170,250,'4 Cylindre 2.0L TwinTurbo',7.70,4.80,'Origine')
+;
 
 
 -- --------------------------------------------------------
