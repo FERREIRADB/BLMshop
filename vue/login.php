@@ -1,6 +1,5 @@
 <?php
 require_once '../modele/config.php';
-require_once '../modele/config.php'; 
 $errorMsg = "";
 if (isset($_POST['submit'])) {
     $email = trim($_POST['email']);
@@ -28,6 +27,7 @@ if (isset($_POST['submit'])) {
                         $_SESSION['user'] = $row['email'];
                         $_SESSION['user_id'] = $row['idUser'];
                         $_SESSION['connected'] = true;
+                        $_SESSION['genre'] = $row['idGenre'];
                         $success = "Login success";
                         header('Location: account.php');
                     }

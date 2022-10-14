@@ -10,23 +10,25 @@ $statement->execute([$id]);
 $produit = $statement->fetch(PDO::FETCH_OBJ);
 
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$lastName = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$puissance = filter_input(INPUT_POST, 'puissance', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$couple = filter_input(INPUT_POST, 'couple', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$moteur = filter_input(INPUT_POST, 'moteur', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$consoVille = filter_input(INPUT_POST, 'consoVille', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$consoAuto = filter_input(INPUT_POST, 'consoAuto', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $productType = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$brand = filter_input(INPUT_POST, 'brand', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$note = filter_input(INPUT_POST, 'note', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 
 if (isset($_POST['edit'])) {
 
-    $query = "UPDATE produits SET name = ?, lastName = ?, price = ?, productType = ?, brand = ?, note = ? WHERE idProduits = ?";
+    $query = "UPDATE produits SET `name` = ?, price = ?, puissance = ?, couple = ?, moteur = ?, consoVille = ?, consoAuto = ? WHERE idProduits = ?";
     $statement = $pdo->prepare($query);
-    $statement->execute([$name, $lastName, $price, $productType, $brand, $note, $id]);
+    $statement->execute([$name, $price, $puissance, $couple, $moteur, $consoVille, $consoAuto, $id]);
     header('Location: admin.php');
 
 }
 
-// if (isset($_FILES['fileToUpload'])) {
+/* if (isset($_FILES['fileToUpload'])) {
 //     var_dump($_FILES);
 //     var_dump($_FILES["fileToUpload"]["name"]);
 //     $target_dir = "img/produits/";
@@ -52,7 +54,7 @@ if (isset($_POST['edit'])) {
 //             echo "Sorry, there was an error uploading your file.";
 //         }
 //     }
-//}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,10 +102,6 @@ if (isset($_POST['edit'])) {
         <div>
             <label for="name">Consomation sur autoroute : </label>
             <input type="text" name="consoAuto" value="<?= $produit->consoAuto ?>">
-        </div>
-        <div>
-            <label for="name">Type produit</label>
-            <input type="text" name="productType" value="<?= $produit->productType ?>">
         </div>
         <button type="submit" name="edit">Modifier</button>
     </form>

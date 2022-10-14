@@ -77,7 +77,6 @@ $produits = $statement->fetchAll(PDO::FETCH_OBJ);
                 <th>Moteur</th>
                 <th>Consomation en Ville</th>
                 <th>Consomation sur autoroute</th>
-                <th>Type produit</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
                 
@@ -91,7 +90,6 @@ $produits = $statement->fetchAll(PDO::FETCH_OBJ);
                     <td><?= $produit->moteur ?></td>
                     <td><?= $produit->consoVille ?> L/100</td>
                     <td><?= $produit->consoAuto ?> L/100</td>
-                    <td><?= $produit->productType ?></td>
                     <td> <a href="edit.php?id=<?= $produit->idProduits ?>">Modifier le produit</a></td>
                     <td> <a href="delete.php?id=<?= $produit->idProduits ?>">Supprimer le produit</a> </td>
                 </tr>

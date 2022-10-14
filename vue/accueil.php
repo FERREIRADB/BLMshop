@@ -1,5 +1,5 @@
 <?php require_once '../modele/config.php'; ?>
-<?php require_once '../modele/fonctions.php'; ?>
+<?php require_once '../modele/fonctions.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +19,7 @@
     ?>
     <ol>
         <div>
-            <?php //categorie();
+            <?php categorie();
             ?>
         </div>
     </ol>
@@ -27,11 +27,6 @@
         <h1>Bienvenu sur notre site de vente de pièces BMW</h1>
         <p>Fait par des passionnés pour des passionnés</p>
     </div>
-    <!--<header style="display:flex; justify-content:center;">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" style="width:1800px; height:750px; display:flex; justify-content:center;">
-            <source src="../img/Venom F82 BMW M4 on TE37s [4K].mp4" type="video/mp4">
-        </video>
-    </header>-->
     <div style="display:flex; justify-content:center;">
         <iframe width="1800px" height="750px" src="https://www.youtube.com/embed/jPpucAll_Qk" title="YouTube video player" frameborder="0" autoplay="autoplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>

@@ -18,7 +18,7 @@
     <div style="margin-left:50px;">
         <a>Ordonner par :</a>
         <a href="produits.php?order=asc">Ordre alphabétique</a>
-        <a href="produits.php?order=productType">Type de produit</a>
+        <a href="produits.php?order=idCategorie">Type de produit</a>
         <a href="produits.php?order=priceplus">Le moins cher (vous êtes pauvres)</a>
         <a href="produits.php?order=pricemoins">Le plus cher (vous êtes riches)</a>
     </div>
@@ -29,7 +29,10 @@
 
 
     if (isset($_GET['data'])) {
-        $request .= "WHERE productType = '" . $_GET['data'] . "'";
+        $request .= "WHERE idCategorie = '" . $_GET['data'] . "'";
+    }
+    if (isset($_GET['modele'])) {
+        $request .= "WHERE idModele = '" . $_GET['modele'] . "'";
     }
     if (isset($_GET['order']) && $_GET['order'] != "asc") {
         if ($_GET['order'] == "priceplus") {

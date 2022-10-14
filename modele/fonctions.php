@@ -28,7 +28,7 @@ function produitsDiv($param)
                     <img src="../img/produits/' . $row['nameImage'] . '" class="img-produits">
                     <div class="card-body pt-0 px-0">
                         <div class="d-flex flex-row justify-content-between mb-0 px-3">
-                            <small class="text-muted mt-1">A PARTIR DE</small>
+                            <small class="text-muted mt-1">' . $row['name'] . '</small>
                             <h6>&dollar;' . number_format($row['price'], 0, '', '\'') . '</h6>
                         </div>
                         <hr class="mt-2 mx-3">
@@ -249,8 +249,8 @@ function deleteArticlePanier($id)
 function categorie()
 {
     global $pdo;
-    foreach ($pdo->query('SELECT * FROM categories') as $row) {
-        echo '<a  href="produits.php?data=' . $row['nameCategories'] . '">' . $row['nameCategories'] . '</a>';
+    foreach ($pdo->query('SELECT * FROM categorie') as $row) {
+        echo '<a  href="produits.php?data=' . $row['idCategorie'] . '">' . $row['nameCategorie'] . '</a>';
     }
 }
 
@@ -317,3 +317,39 @@ function countProducts($idUser, $idProduit) {
     $nbProduit = count($row);
     return $nbProduit;
 }
+
+
+
+
+function AfficherCategorie(){
+    global $pdo;
+    foreach ($pdo->query('SELECT * FROM categorie') as $row)
+        echo '<li>
+            <a class="dropdown-item" href="produits.php?data='.$row['idCategorie'].'">'.$row['nameCategorie'].'</a>
+        </li>';
+}
+
+function AfficherModele(){
+    global $pdo;
+    foreach ($pdo->query('SELECT * FROM modele ORDER BY nameModele ASC') as $row)
+        echo '<li>
+            <a class="dropdown-item" href="modele.php?data='.$row['idModele'].'">'.$row['nameModele'].'</a>
+        </li>';
+}
+
+function modele()
+{
+    global $pdo;
+    foreach ($pdo->query('SELECT * FROM modele') as $row) {
+        echo '<a  href="produits.php?modele=' . $row['idModele'] . '">' . $row['nameModele'] . '</a>';
+    }
+}
+
+
+function LireGenre($idGenre){
+    global $pdo;
+    $statement = $pdo->prepare("SELECT nameGenre FROM genre where idGenre = $idGenre");
+    $statement->execute();
+    return $statement->fetch(PDO::FETCH_OBJ);
+}
+

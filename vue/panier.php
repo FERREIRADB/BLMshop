@@ -1,6 +1,6 @@
 <?php
 include_once('../modele/fonctions.php');
-var_dump($_SESSION);
+if(!$_SESSION['connected']){header('Location: login.php');}
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $idProduits = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
 $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);?>

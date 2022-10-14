@@ -21,6 +21,8 @@ if (isset($_POST['submit'])) {
         $pseudo = filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $genre = filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
 
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
         if (filter_var($email)) {
@@ -33,8 +35,8 @@ if (isset($_POST['submit'])) {
             // Requête pour créer l'utilisateur dans la base de données
             if ($statement->rowCount() == 0) // Si l'email n'existe pas encore
                 $sql = "INSERT INTO users 
-                (pseudo, email, `password`) 
-                values(:pseudo,:email,:pass)";
+                (pseudo, email, `password`, idGenre) 
+                values(:pseudo,:email,:pass,:idGenre)";
 
             try {
                 // Insertion du user dans la base de données
@@ -42,7 +44,8 @@ if (isset($_POST['submit'])) {
                 $params = [
                     ':pseudo' => $pseudo,
                     ':email' => $email,
-                    ':pass' => $hashPassword
+                    ':pass' => $hashPassword,
+                    ':idGenre' => $genre
                 ];
 
                 $handle->execute($params);
@@ -117,6 +120,14 @@ if (isset($_POST['submit'])) {
             <input type="text" name="pseudo" placeholder="Enter pseudo" class="form-control" value="<?php echo ($valPseudo ?? '') ?>">
             <p></p>
             <input type="password" name="password" placeholder="Enter Password" class="form-control" value="<?php echo ($valPassword ?? '') ?>">
+            <p></p>
+            <select name="genre">
+                    <?php
+                    foreach ($pdo->query('SELECT * FROM genre') as $row) {
+                        echo '<option value= '.$row['idGenre'].'> '.$row['nameGenre'] .'</option>';
+                    }
+                    ?>
+                </select>
       
             <p></p>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
