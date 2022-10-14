@@ -1,5 +1,3 @@
-<?php require_once '../modele/config.php'; ?>
-<?php require_once '../modele/fonctions.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +12,10 @@
 </head>
 
 <body>
-    <?php
-    include "include/navbar.php";
-    ?>
+    <?php include "../controllers/include/navbarControllers.php"; ?>
     <ol>
         <div>
-            <?php categorie();
-            ?>
+            <?php categorie(); ?>
         </div>
     </ol>
     <div style="text-align:center;">
@@ -30,16 +25,13 @@
     <div style="display:flex; justify-content:center;">
         <iframe width="1800px" height="750px" src="https://www.youtube.com/embed/jPpucAll_Qk?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="autoplay; loop;" allowfullscreen></iframe>
     </div>
-    <?php
-    $request = "select * from produits ";
-    ?>
 
-    <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsAlea() ?></article>
+    <article class="articleProduct" style="width: 100%; text-align: center;">
+        <?= produitsAlea() ?>
+    </article>
 
 
-    <?php
-    include "include/footer.php";
-    ?>
+    <?php include "include/footer.php"; ?>
 
 </body>
 

@@ -1,3 +1,4 @@
+
 <footer class="bg-primary text-center text-lg-start text-white">
     <!-- Grid container -->
     <div class="container p-4">
@@ -33,16 +34,16 @@
           <h5 class="text-uppercase mb-4">Nos pages</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="Accueil.php" class="text-white"></i><i class="fa-solid fa-house-chimney" style="margin-right:10px;"></i>Accueil</a>
+              <a href="AccueilControllers.php" class="text-white"></i><i class="fa-solid fa-house-chimney" style="margin-right:10px;"></i>Accueil</a>
             </li>
             <li class="mb-2">
-              <a href="produits.php" class="text-white"></i><i class="fa-solid fa-shop"  style="margin-right:10px;"></i>Produits</a>
+              <a href="produitsControllers.php" class="text-white"></i><i class="fa-solid fa-shop"  style="margin-right:10px;"></i>Produits</a>
             </li>
             <li class="mb-2">
-              <a href="panier.php" class="text-white"></i><i class="fa-solid fa-cart-shopping" style="margin-right:10px;"></i>Panier</a>
+              <a href="panierControllers.php" class="text-white"></i><i class="fa-solid fa-cart-shopping" style="margin-right:10px;"></i>Panier</a>
             </li>
             <li class="mb-2">
-              <a href="about.php" class="text-white"></i><i class="fa-solid fa-address-card" style="margin-right:10px;"></i>A propos de nous</a>
+              <a href="aboutControllers.php" class="text-white"></i><i class="fa-solid fa-address-card" style="margin-right:10px;"></i>A propos de nous</a>
             </li>
 
           </ul>

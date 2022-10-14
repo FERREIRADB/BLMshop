@@ -1,9 +1,3 @@
-<?php
-include_once('../modele/fonctions.php');
-if(!$_SESSION['connected']){header('Location: login.php');}
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-$idProduits = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
-$idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,7 +14,7 @@ $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);?>
 </head>
 
 <body>
-    <?php include 'include/navbar.php' ?>
+    <?php include '../controllers/include/navbarControllers.php' ?>
     <main>
         <?php
         if (!isset($_SESSION['user'])) {

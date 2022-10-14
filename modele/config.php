@@ -15,4 +15,18 @@ try {
     die();
 }
 
+function getDb()
+{
+    static $db;
+    if ($db) {
+        return $db;
+    }
+    return $db = new PDO("mysql:host=localhost;dbname=BLMshop", 'root', 'Super', array(
+        PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+        PDO::ATTR_PERSISTENT => true,
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_EMULATE_PREPARES => false
+    ));
+}
+
 

@@ -1,61 +1,3 @@
-<?php
-
-include_once('../modele/fonctions.php');
-
-
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-$query = "SELECT * FROM produits WHERE idProduits = ?";
-$statement = $pdo->prepare($query);
-$statement->execute([$id]);
-$produit = $statement->fetch(PDO::FETCH_OBJ);
-
-$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$puissance = filter_input(INPUT_POST, 'puissance', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$couple = filter_input(INPUT_POST, 'couple', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$moteur = filter_input(INPUT_POST, 'moteur', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$consoVille = filter_input(INPUT_POST, 'consoVille', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$consoAuto = filter_input(INPUT_POST, 'consoAuto', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$productType = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-
-if (isset($_POST['edit'])) {
-
-    $query = "UPDATE produits SET `name` = ?, price = ?, puissance = ?, couple = ?, moteur = ?, consoVille = ?, consoAuto = ? WHERE idProduits = ?";
-    $statement = $pdo->prepare($query);
-    $statement->execute([$name, $price, $puissance, $couple, $moteur, $consoVille, $consoAuto, $id]);
-    header('Location: admin.php');
-
-}
-
-/* if (isset($_FILES['fileToUpload'])) {
-//     var_dump($_FILES);
-//     var_dump($_FILES["fileToUpload"]["name"]);
-//     $target_dir = "img/produits/";
-//     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-//     $uploadOk = 1;
-//     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-//     // Check if image file is a actual image or fake image
-//     if (isset($_POST["submit"])) {
-//         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//         if ($check !== false) {
-//             $uploadOk = 1;
-//         } else {
-//             echo "File is not an image.";
-//             $uploadOk = 0;
-//         }
-//     }
-//     if ($uploadOk == 0) {
-//         echo "Sorry, your file was not uploaded.";
-//         // if everything is ok, try to upload file
-//     } else {
-//         if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-//             echo "Sorry, there was an error uploading your file.";
-//         }
-//     }
-}*/
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +10,7 @@ if (isset($_POST['edit'])) {
 </head>
 
 <body>
-    <?php require_once 'include/navbar.php'; ?>
+    <?php require_once '../controllers/include/navbarControllers.php'; ?>
     <form action="" method="post">
         <div>
             <label for="name">Name : </label>
