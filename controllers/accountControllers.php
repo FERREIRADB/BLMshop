@@ -3,6 +3,10 @@
 $edit = false;
 $readonly = "readonly";
 
+
+if (empty($_SESSION['user_id'])) {
+    header('Location: index.php?url=accueil');
+}
 function UserDetails(int $user_id)
 {
     global $pdo;
@@ -16,10 +20,6 @@ function UserDetails(int $user_id)
     } catch (PDOException $e) {
         exit($e->getMessage());
     }
-}
-
-if (empty($_SESSION['user_id'])) {
-    header('Location: index.php?url=accueil');
 }
 $user = UserDetails($_SESSION['user_id']);
 

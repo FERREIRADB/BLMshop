@@ -25,7 +25,7 @@ function affichagePanier($row)
                                     ' . $row['name'] . '
                                     </a>
                                     <div class="m-t-sm">
-                                        <a href="index.php?url=panier&.php?id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>
+                                        <a href="index.php?url=panier&id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>
                        </div>
                                 </td>
                                 <td>
@@ -58,7 +58,7 @@ function afficherPanier()
                 <div class="ibox">
                     <div class="ibox-title">
                     
-                    <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="panierControllers.php?idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
+                    <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="index.php?url=panier&idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
                         <span style="font-size: 15px;margin:10px" class="pull-right">Total : $' . number_format($total, 0, '', '\'') . '</span>
                        
                         <img class="petit_panier" src="img/logo/panier.png" alt="panier" style="width: 30px;">
@@ -115,6 +115,16 @@ function countProducts($idUser, $idProduit)
     $row = $statement->fetchAll(PDO::FETCH_ASSOC);
     $nbProduit = count($row);
     return $nbProduit;
+}
+function afficherPanierTotal()
+{
+    global $pdo;
+    $total = 0;
+
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
+        $total += $row['price'];
+    }
+    return $total;
 }
 include "vue/panier.php";
 

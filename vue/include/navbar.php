@@ -100,9 +100,11 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <!-- Icon -->
+      <?php if($_SESSION['connected']){
+        echo '
       <a class="link-secondary me-3" href="index.php?url=panier">
         <i class="fas fa-shopping-cart"></i>
-      </a>
+      </a>';}?>
       <!-- Avatar -->
       <div class="dropdown">
         <a

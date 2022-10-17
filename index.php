@@ -10,7 +10,6 @@ include 'controllers/include/navbarControllers.php';
 if (empty($url)) {
         $url = 'accueil';
 }
-
 switch ($url) {
     case 'accueil':
         include('controllers/accueilControllers.php');

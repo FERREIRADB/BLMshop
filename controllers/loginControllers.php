@@ -1,5 +1,8 @@
 <?php
 $errorMsg = "";
+if($_SESSION['connected']){
+    echo '<meta http-equiv="refresh" content="0;url=index.php?url=account">';
+}
 if (isset($_POST['submit'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -7,8 +10,8 @@ if (isset($_POST['submit'])) {
 
     if (empty($email)) {
         $errors[] = "Please enter email";
-    } else if (empty($password)) {
-        $errors[] = "Please enter password";
+    } if (empty($password)) {
+        $errors[] .= "Please enter password";
     }
 
     if (!empty($email) && !empty($password)) {
@@ -28,7 +31,9 @@ if (isset($_POST['submit'])) {
                         $_SESSION['connected'] = true;
                         $_SESSION['genre'] = $row['idGenre'];
                         $success = "Login success";
-                        header('Location: index.php?url=account');
+                        echo '<meta http-equiv="refresh" content="0;url=index.php?url=account">';
+                        exit;
+                        
                     }
                     // Si correspond pas, erreur
                     else {
