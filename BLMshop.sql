@@ -172,7 +172,17 @@ CREATE TABLE `produits` (
 
 LOCK TABLES `produits` WRITE;
 /*!40000 ALTER TABLE `produits` DISABLE KEYS */;
-INSERT INTO `produits` VALUES (1,'Bmw M1','BMW-1M.png',55700,340,450,'6 Cylindres 3.0L',11,6,1,17),(2,'Bmw M3 F80','bmw-m3-f80.png',73400,430,550,'6 Cylindres 3.0L',12,7,1,7),(3,'Bmw M3 G80','bmw-m3-g80.png',105250,480,550,'6 Cyindres 3.0L TwinTurbo',12,9,1,7),(4,'Bmw M4 F82','bmw-m4-f82.png',159900,430,550,'6 cylindres 3.0L Bi-Turbo',12,7,1,8),(5,'Bmw M4 F82 Tuned','BMW-M4-F82-Tuning.png',189900,520,710,'6 cylindres 3.0L Bi-Turbo',13,8,2,8),(6,'Bmw M4 G82','bmw-m4-g82.png',158990,350,550,'6 Cyindres 3.0L TwinTurbo',16,8,1,8),(7,'Bmw M6','bmw-m6.png',153750,600,700,'V8 4.4L Bi-Turbo',14,8,1,16),(8,'Bmw M2','m2.png',71000,405,550,'6 cylindres 3.0L Bi-Turbo',14,10,1,6),(9,'Bmw M5','m5.jpg',115000,617,750,'V8 4.4L Bi-Turbo',15,8,1,9),(10,'Bmw 118i e87','Serie1_e87.jpg',7000,129,180,'4 Cylindre 2.0L',10,6,1,1),(11,'Bmw 118i f20','Serie1_f20.jpg',25690,170,250,'4 Cylindre 2.0L TwinTurbo',8,5,1,1);
+INSERT INTO `produits` VALUES (1,'Bmw M1','BMW-1M.png',55700,340,450,'6 Cylindres 3.0L',11,6,1,17),
+(2,'Bmw M3 F80','bmw-m3-f80.png',73400,430,550,'6 Cylindres 3.0L',12,7,1,7),
+(3,'Bmw M3 G80','bmw-m3-g80.png',105250,480,550,'6 Cyindres 3.0L TwinTurbo',12,9,1,7),
+(4,'Bmw M4 F82','bmw-m4-f82.png',159900,430,550,'6 cylindres 3.0L Bi-Turbo',12,7,1,8),
+(5,'Bmw M4 F82 Tuned','BMW-M4-F82-Tuning.png',189900,520,710,'6 cylindres 3.0L Bi-Turbo',13,8,2,8),
+(6,'Bmw M4 G82','bmw-m4-g82.png',158990,350,550,'6 Cyindres 3.0L TwinTurbo',16,8,1,8),
+(7,'Bmw M6','bmw-m6.png',153750,600,700,'V8 4.4L Bi-Turbo',14,8,1,16),
+(8,'Bmw M2','m2.png',71000,405,550,'6 cylindres 3.0L Bi-Turbo',14,10,1,6),
+(9,'Bmw M5','m5.jpg',115000,617,750,'V8 4.4L Bi-Turbo',15,8,1,9),
+(10,'Bmw 118i e87','Serie1_e87.jpg',7000,129,180,'4 Cylindre 2.0L',10,6,1,1),
+(11,'Bmw 118i f20','Serie1_f20.jpg',25690,170,250,'4 Cylindre 2.0L TwinTurbo',8,5,1,1);
 /*!40000 ALTER TABLE `produits` ENABLE KEYS */;
 UNLOCK TABLES;
 
