@@ -1,4 +1,4 @@
-<?php include_once('../modele/config.php');
+<?php
 
 function LireGenre($idGenre){
     global $pdo;
@@ -11,17 +11,26 @@ function AfficherCategorie(){
     global $pdo;
     foreach ($pdo->query('SELECT * FROM categorie') as $row)
         echo '<li>
-            <a class="dropdown-item" href="produitsControllers.php?data='.$row['idCategorie'].'">'.$row['nameCategorie'].'</a>
+            <a class="dropdown-item" href="index.php?url=produits&data='.$row['idCategorie'].'">'.$row['nameCategorie'].'</a>
         </li>';
 }
 
 function AfficherModele(){
     global $pdo;
     foreach ($pdo->query('SELECT * FROM modele ORDER BY nameModele ASC') as $row)
-        echo '
-            <a class="dropdown-item" href="produitsControllers.php?modele='.$row['idModele'].'">'.$row['nameModele'].'</a>
-        ';
+        echo '<a class="dropdown-item" href="index.php?url=produits&modele='.$row['idModele'].'">'.$row['nameModele'].'</a>';
 }
 if($_SESSION['connected']){$genre = LireGenre($_SESSION['genre'])->nameGenre;}
-include "../vue/include/navbar.php";
+include "vue/include/navbar.php";
+
+
+function categorie()
+{
+    global $pdo;
+    foreach ($pdo->query('SELECT * FROM categorie') as $row) {        
+        echo '<a class="dropdown-item" href="index.php?url=produits&data='.$row['idCategorie'].'">'.$row['nameCategorie'].'</a>';
+    }
+}
+
+
 ?>

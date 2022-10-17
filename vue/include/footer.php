@@ -7,8 +7,8 @@
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
           <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-            <img src="../img/logo/BLMshopLogo.png" height="150" alt=""
-                 loading="lazy" />
+            <img src="img/logo/BLMshopLogo.png" height="150" alt=""
+                 loading="lazy"/>
           </div>
           <p class="text-center">Un site fait par des passionnés de BMW une marque qui nous portent vraiment a coeur de nous occuper</p>
         </div>
@@ -34,16 +34,16 @@
           <h5 class="text-uppercase mb-4">Nos pages</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="AccueilControllers.php" class="text-white"></i><i class="fa-solid fa-house-chimney" style="margin-right:10px;"></i>Accueil</a>
+              <a href="index.php?url=accueil" class="text-white"></i><i class="fa-solid fa-house-chimney" style="margin-right:10px;"></i>Accueil</a>
             </li>
             <li class="mb-2">
-              <a href="produitsControllers.php" class="text-white"></i><i class="fa-solid fa-shop"  style="margin-right:10px;"></i>Produits</a>
+              <a href="index.php?url=produits" class="text-white"></i><i class="fa-solid fa-shop"  style="margin-right:10px;"></i>Produits</a>
             </li>
             <li class="mb-2">
-              <a href="panierControllers.php" class="text-white"></i><i class="fa-solid fa-cart-shopping" style="margin-right:10px;"></i>Panier</a>
+              <a href="index.php?url=panier" class="text-white"></i><i class="fa-solid fa-cart-shopping" style="margin-right:10px;"></i>Panier</a>
             </li>
             <li class="mb-2">
-              <a href="aboutControllers.php" class="text-white"></i><i class="fa-solid fa-address-card" style="margin-right:10px;"></i>A propos de nous</a>
+              <a href="index.php?url=about" class="text-white"></i><i class="fa-solid fa-address-card" style="margin-right:10px;"></i>A propos de nous</a>
             </li>
 
           </ul>

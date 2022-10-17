@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
     <title>Document</title>
 </head>
 
 
 <body>
-    <?php require_once '../controllers/include/navbarControllers.php' ?>
     <h1>Admin</h1>
     <div class="produits">
         <table id="customers" style="margin-left: 25px; border-collapse: collapse;">
@@ -30,7 +29,6 @@
             <?php afficherArticle($produits); ?>
         </table>
     </div>
-    <?php require_once 'include/footer.php' ?>
 
 </body>
 

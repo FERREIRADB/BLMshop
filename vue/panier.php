@@ -8,20 +8,19 @@
     <link rel="stylesheet" type='text/css' href="css/footer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='../css/style.css'>
-    <link rel='stylesheet' type='text/css' href='../css/panier.css'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' href='css/panier.css'>
     <title>Panier</title>
 </head>
 
 <body>
-    <?php include '../controllers/include/navbarControllers.php' ?>
     <main>
         <?php
         if (!isset($_SESSION['user'])) {
             $host = $_SERVER['HTTP_HOST'];
             $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
             $extra = 'login.php';
-            header("Location: http://$host$uri/$extra");
+            header("Location: index.php");
             exit;
         }
 
@@ -46,7 +45,6 @@
         ?>
 
     </main>
-    <?php include "include/footer.php";?>
 
 </body>
 

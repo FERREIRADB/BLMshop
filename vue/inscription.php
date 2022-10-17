@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/inscription.css">
+    <link rel="stylesheet" href="css/inscription.css">
     <title>Inscription</title>
 </head>
 
 <body>
-<?php include "../controllers/include/navbarControllers.php";?>
 
     <div id="container">
         <p>Créez un compte</p>
@@ -43,10 +42,9 @@
       
             <p></p>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-            <p class="pt-2"> Back to <a href="login.php">Login</a></p>
+            <p class="pt-2"> Back to <a href="index.php?url=login">Login</a></p>
         </form>
     </div>
-    <?php include "include/footer.php";?>
 
 </body>
 

@@ -1,6 +1,8 @@
 <?php
-include_once('../modele/config.php');
-if(!$_SESSION['connected']){header('Location: loginControllers.php');}
+if(!$_SESSION['connected'])
+{
+    header('Location: index.php?url=login');
+}
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $idProduits = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
 $idUser = filter_input(INPUT_GET, 'idUser', FILTER_VALIDATE_INT);
@@ -14,16 +16,16 @@ function affichagePanier($row)
                             <tr>
                                 <td width="90">
                                     <div>
-                                    <img class="card-img-top" src="../img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
+                                    <img class="card-img-top" src="img/produits/' . $row['nameImage'] . '" alt="' . $row['name'] . '">
                                     </div>
                                 </td>
                                 <td class="desc">
                                     <h3>
-                                    <a href="detailControllers.php?idProduits=' . $row['idProduits'] . '" class="text-navy">
+                                    <a href="index.php?url=detail&idProduits=' . $row['idProduits'] . '" class="text-navy">
                                     ' . $row['name'] . '
                                     </a>
                                     <div class="m-t-sm">
-                                        <a href="panierControllers.php?id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>
+                                        <a href="index.php?url=panier&id=' . $row['idProduits'] . '" class="text-muted"><i class="fa fa-trash"></i> Supprimer item</a>
                        </div>
                                 </td>
                                 <td>
@@ -56,10 +58,10 @@ function afficherPanier()
                 <div class="ibox">
                     <div class="ibox-title">
                     
-                    <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="panierControllers.php?idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
+                    <span style="font-size: 15px; margin:0;padding:0;" class="pull-right"><a class="pull-right" href="index.php?url=panier&idUser=' . $_SESSION['user_id'] . '"> Vider mon panier</a></span>
                         <span style="font-size: 15px;margin:10px" class="pull-right">Total : $' . number_format($total, 0, '', '\'') . '</span>
                        
-                        <img class="petit_panier" src="../img/logo/panier.png" alt="panier" style="width: 30px;">
+                        <img class="petit_panier" src="img/logo/panier.png" alt="panier" style="width: 30px;">
                     </div>';
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         if (countProducts($_SESSION['user_id'], $row['idProduits']) <= 1) {
@@ -114,5 +116,15 @@ function countProducts($idUser, $idProduit)
     $nbProduit = count($row);
     return $nbProduit;
 }
-include "../vue/panier.php";
+function afficherPanierTotal()
+{
+    global $pdo;
+    $total = 0;
+
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
+        $total += $row['price'];
+    }
+    return $total;
+}
+include "vue/panier.php";
 

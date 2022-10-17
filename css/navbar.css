@@ -1,0 +1,6 @@
+.nav-link{
+    color: #9b9a9a;
+}
+.dropdown-menu.show{
+    margin-right: -100px;
+}

@@ -1,4 +1,4 @@
-<?php include '../modele/config.php'; 
+<?php 
 function detailProduit()
 {
     $id = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
@@ -11,8 +11,8 @@ function detailProduit()
     echo '  <div class="container">';
     echo '  <div class="cardDetail" style="border-top: none; border-radius:25px">';
     echo '    <div class="card-head">';
-    echo '      <img src="../img/logo/BLMshopLogo.png" alt="logo" class="card-logo">';
-    echo '      <img src="../img/produits/' . $detailProduit->nameImage . '" alt="Voiture" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
+    echo '      <img src="img/logo/BLMshopLogo.png" alt="logo" class="card-logo">';
+    echo '      <img src="img/produits/' . $detailProduit->nameImage . '" alt="Voiture" class="product-img" height="200" style="margin-left:70%; margin-top:2.5%;">';
     echo '      <div class="product-detail">';
     echo '      </div>';
     echo '      <span class="back-text">';
@@ -36,7 +36,7 @@ function detailProduit()
     echo '        <span class="product-price" style="margin-top:10px; margin-left:12%">';
 
     if (isset($_SESSION['user'])) {
-        echo '                <a style="color:white; font-size:23px; text-decoration:none;" href="panierControllers.php?idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
+        echo '                <a style="color:white; font-size:23px; text-decoration:none;" href="index.php?url=panier&idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
     } else {
         echo '<span style="color:red; font-size:19px;">Veuillez vous connecter pour ajouter ce produit au panier</span>';
     }
@@ -47,7 +47,7 @@ function detailProduit()
     echo '  </div>';
     echo '</div>';
 }
-include "../vue/detail.php";
+include "vue/detail.php";
 
 ?>
 

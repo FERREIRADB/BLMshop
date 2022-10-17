@@ -14,6 +14,6 @@ function logout() {
 
     session_destroy();
 }
-session_start();
 logout();
-header('Location: ../index.php');
+echo '<meta http-equiv="refresh" content="0;url=index.php?url=index.php?url=accueil">';
+

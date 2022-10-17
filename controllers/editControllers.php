@@ -1,8 +1,5 @@
 <?php
 
-include_once('../modele/config.php');
-
-
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $query = "SELECT * FROM produits WHERE idProduits = ?";
 $statement = $pdo->prepare($query);
@@ -24,10 +21,10 @@ if (isset($_POST['edit'])) {
     $query = "UPDATE produits SET `name` = ?, price = ?, puissance = ?, couple = ?, moteur = ?, consoVille = ?, consoAuto = ? WHERE idProduits = ?";
     $statement = $pdo->prepare($query);
     $statement->execute([$name, $price, $puissance, $couple, $moteur, $consoVille, $consoAuto, $id]);
-    header('Location: adminControllers.php');
+    header('Location: index.php?url=admin&');
 
 }
-include "../vue/edit.php";
+include "vue/edit.php";
 
 ?>
 

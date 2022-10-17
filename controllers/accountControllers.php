@@ -1,9 +1,12 @@
 <?php
-require_once '../modele/config.php';
 
 $edit = false;
 $readonly = "readonly";
 
+
+if (empty($_SESSION['user_id'])) {
+    header('Location: index.php?url=accueil');
+}
 function UserDetails(int $user_id)
 {
     global $pdo;
@@ -18,10 +21,6 @@ function UserDetails(int $user_id)
         exit($e->getMessage());
     }
 }
-
-if (empty($_SESSION['user_id'])) {
-    header('Location: accueilControllers.php');
-}
 $user = UserDetails($_SESSION['user_id']);
 
 // Edit
@@ -29,7 +28,7 @@ if (isset($_POST['btn-edit'])) {
     $edit = true;
 }
 if (isset($_POST['btn-logout'])) {
-    header('location: logoutControllers.php');
+    header('location: index.php?url=logout');
 }
 if ($edit) {
     $readonly = "";
@@ -56,4 +55,4 @@ if (isset($_POST['btn-save'])) {
     }
 }
 
-include "../vue/account.php";?>
+include "vue/account.php";?>

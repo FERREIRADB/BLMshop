@@ -1,6 +1,8 @@
 <?php
-require_once '../modele/config.php';
 $errorMsg = "";
+if($_SESSION['connected']){
+    echo '<meta http-equiv="refresh" content="0;url=index.php?url=account">';
+}
 if (isset($_POST['submit'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -8,8 +10,8 @@ if (isset($_POST['submit'])) {
 
     if (empty($email)) {
         $errors[] = "Please enter email";
-    } else if (empty($password)) {
-        $errors[] = "Please enter password";
+    } if (empty($password)) {
+        $errors[] .= "Please enter password";
     }
 
     if (!empty($email) && !empty($password)) {
@@ -29,7 +31,9 @@ if (isset($_POST['submit'])) {
                         $_SESSION['connected'] = true;
                         $_SESSION['genre'] = $row['idGenre'];
                         $success = "Login success";
-                        header('Location: accountControllers.php');
+                        echo '<meta http-equiv="refresh" content="0;url=index.php?url=account">';
+                        exit;
+                        
                     }
                     // Si correspond pas, erreur
                     else {
@@ -48,7 +52,7 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-include "../vue/login.php";
+include "vue/login.php";
 ?>
 
 

@@ -1,8 +1,5 @@
 <?php
 
-// Importation de la base de données
-require_once '../modele/config.php';
-
 // Si submit est cliqué
 if (isset($_POST['submit'])) {
     // Si chaque valeur du formulaire a été rentré
@@ -83,6 +80,6 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-include "../vue/inscription.php";?>
+include "vue/inscription.php";?>
 
 
