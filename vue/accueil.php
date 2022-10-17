@@ -35,7 +35,7 @@
     ?>
 
     <article class="articleProduct" style="width: 100%; text-align: center;">
-        <?= produitsAlea() ?>
+        <?= produitsAlea(); ?>
     </article>
 
 
