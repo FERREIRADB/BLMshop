@@ -15,10 +15,10 @@
     <?php include "../controllers/include/navbarControllers.php";?>
     <div style="margin-left:50px;">
         <a>Ordonner par :</a>
-        <a href="produits.php?order=asc">Ordre alphabétique</a>
-        <a href="produits.php?order=idCategorie">Type de produit</a>
-        <a href="produits.php?order=priceplus">Le moins cher (vous êtes pauvres)</a>
-        <a href="produits.php?order=pricemoins">Le plus cher (vous êtes riches)</a>
+        <a href="produitsControllers.php?order=asc">Ordre alphabétique</a>
+        <a href="produitsControllers.php?order=idCategorie">Type de produit</a>
+        <a href="produitsControllers.php?order=priceplus">Le moins cher (vous êtes pauvres)</a>
+        <a href="produitsControllers.php?order=pricemoins">Le plus cher (vous êtes riches)</a>
     </div>
     </ul>
     <?php include "include/carousel.php"; ?>
