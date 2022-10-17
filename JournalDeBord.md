@@ -15,3 +15,6 @@ J’ai continué de travailler sur PayPal Madame Moro m’a aiguillez car j’av
 
 ## 13.10.2022
 J'ai fini Paypal
+
+## 17.10.2022
+J'ai créer de nouvel image pour la page produits j'ai régler quelque dernier beug du au fait que nous avons tout mis en MVC. J'ai créer et fait la présentation que je n'ai pas encore fini.
