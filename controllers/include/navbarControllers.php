@@ -22,4 +22,15 @@ function AfficherModele(){
 }
 if($_SESSION['connected']){$genre = LireGenre($_SESSION['genre'])->nameGenre;}
 include "vue/include/navbar.php";
+
+
+function categorie()
+{
+    global $pdo;
+    foreach ($pdo->query('SELECT * FROM categorie') as $row) {        
+        echo '<a class="dropdown-item" href="index.php?url=produits&data='.$row['idCategorie'].'">'.$row['nameCategorie'].'</a>';
+    }
+}
+
+
 ?>

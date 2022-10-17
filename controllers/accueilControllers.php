@@ -1,11 +1,5 @@
 <?php 
-function categorie()
-{
-    global $pdo;
-    foreach ($pdo->query('SELECT * FROM categorie') as $row) {
-        echo '<a  href="index.php?url=produits&data=' . $row['idCategorie'] . '">' . $row['nameCategorie'] . '</a>';
-    }
-}
+
 
 function produitsAlea()
 {

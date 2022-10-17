@@ -14,7 +14,6 @@
 <body>
     <ol>
         <div>
-            <?php categorie(); ?>
         </div>
     </ol>
     <div style="text-align:center;">

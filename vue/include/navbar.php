@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Material Design for Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Font Awesome -->
@@ -89,6 +90,26 @@
           <?= AfficherModele()?>
         </ul>
       </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Types
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <?= categorie()?>
+        </ul>
+      </li>
+
+
+
+
+      
         <li class="nav-item">
           <a class="nav-link" href="index.php?url=about">A Propos</a>
         </li>
@@ -134,6 +155,7 @@
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
+          style="margin-left:-100px; margin-top: 10px;"
         >
           <li>
             <a class="dropdown-item" href="index.php?url=account">Mon Compte</a>
