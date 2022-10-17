@@ -3,8 +3,8 @@ function createurs()
 {
 
     $nomCreateurs = [
-        "Lucas" => "Fonctionnalités php",
-        "Bryan" => "Regarde netflix"
+        "Lucas" => "Travail aussi woula",
+        "Bryan" => "Travail à fond"
     ];
 
     foreach ($nomCreateurs as $key => $value) {
