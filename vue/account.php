@@ -42,9 +42,6 @@
                     <div class="mt-5 text-center">
                         <button class="btn profile-button" style="margin:10px; color:green;" name="btn-edit" type="submit">Modifier</button>
                         <button class="btn profile-button" style="color:green;" name="btn-save" type="submit">Sauvegarder</button>
-                        <a href="commande.php" target="_blank" class="btn profile-button" name="btn-commande" style="color:green;">
-                            Mes Commandes
-                        </a>
                     </div>
 
                 </div>

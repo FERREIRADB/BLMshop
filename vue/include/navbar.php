@@ -90,26 +90,6 @@
           <?= AfficherModele()?>
         </ul>
       </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Types
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <?= categorie()?>
-        </ul>
-      </li>
-
-
-
-
-      
         <li class="nav-item">
           <a class="nav-link" href="index.php?url=about">A Propos</a>
         </li>
