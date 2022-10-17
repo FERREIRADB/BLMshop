@@ -24,7 +24,7 @@
             echo '<div class="alert-success">' . $success . '</div>';
         }
         ?>
-        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+        <form action="" method="post">
 
             <input type="text" name="email" placeholder="Email" class="form-control" value="<?php echo ($valEmail ?? '') ?>">
             <p></p>
