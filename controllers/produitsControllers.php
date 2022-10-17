@@ -1,4 +1,4 @@
-<?php require_once "../modele/config.php"; 
+<?php
 function produitsDiv($param)
 {
     echo '<div class="container-fluid d-flex justify-content-center"><div class="row mt-5">';
@@ -6,7 +6,7 @@ function produitsDiv($param)
         echo '
             <div class="col-sm-4">
                 <div class="card">
-                    <img src="../img/produits/' . $row['nameImage'] . '" class="img-produits">
+                    <img src="img/produits/' . $row['nameImage'] . '" class="img-produits">
                     <div class="card-body pt-0 px-0">
                         <div class="d-flex flex-row justify-content-between mb-0 px-3">
                             <small class="text-muted mt-1">' . $row['name'] . '</small>
@@ -31,7 +31,7 @@ function produitsDiv($param)
                                 </div>
                             </div>
                         </div>
-                        <a href="./detailControllers.php?idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" style="background-color:#1127e9; border-color:#1127e9;"><small>Ajouter au panier</small></button></div></a>
+                        <a href="index.php?url=detail&idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" style="background-color:#1127e9; border-color:#1127e9;"><small>Ajouter au panier</small></button></div></a>
                     </div>
                 </div>
             </div>';
@@ -62,4 +62,4 @@ $request = "select * from produits ";
     }
      
     
-    include "../vue/produits.php";
+    include "vue/produits.php";

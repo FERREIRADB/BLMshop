@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <?php require_once '../controllers/include/navbarControllers.php'; ?>
     <form action="" method="post">
         <div>
             <label for="name">Name : </label>
@@ -47,7 +46,6 @@
         </div>
         <button type="submit" name="edit">Modifier</button>
     </form>
-    <?php require_once 'include/footer.php'; ?>
 
 </body>
 

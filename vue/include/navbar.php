@@ -19,7 +19,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
     <!-- MDB -->
-    <link rel="stylesheet" href="../css/mdb.min.css" />
   </head>
   <body>
     <!-- Start your project here-->
@@ -43,9 +42,9 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="accueilControllers.php">
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.php?url=accueil">
         <img
-          src="../img/logo/BLMshopLogo.png"
+          src="img/logo/BLMshopLogo.png"
           height="50"
           alt="BLMshop"
           loading="lazy"
@@ -54,7 +53,7 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="./accueilControllers.php">Accueil</a>
+          <a class="nav-link" href="index.php?url=accueil">Accueil</a>
         </li>
         <li class="nav-item dropdown">
         <a
@@ -69,7 +68,7 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li>
-            <a class="dropdown-item" href="produitsControllers.php">Tous nos produits</a>
+            <a class="dropdown-item" href="index.php?url=produits">Tous nos produits</a>
           </li>
           <li><hr class="dropdown-divider" /></li>
           <?= AfficherCategorie() ?>
@@ -91,7 +90,7 @@
         </ul>
       </li>
         <li class="nav-item">
-          <a class="nav-link" href="aboutControllers.php">A Propos</a>
+          <a class="nav-link" href="index.php?url=about">A Propos</a>
         </li>
       </ul>
       <!-- Left links -->
@@ -101,7 +100,7 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <!-- Icon -->
-      <a class="link-secondary me-3" href="panierControllers.php">
+      <a class="link-secondary me-3" href="index.php?url=panier">
         <i class="fas fa-shopping-cart"></i>
       </a>
       <!-- Avatar -->
@@ -117,7 +116,7 @@
         <?php if($_SESSION['connected']){
           
             
-      echo '<img src="../img/pp/'.$genre.'.jpg"
+      echo '<img src="img/pp/'.$genre.'.jpg"
             class="rounded-circle"
             height="35"
             alt="Pas connecter"
@@ -127,7 +126,7 @@
         <?php if(!$_SESSION['connected']){
           echo '<ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link" href="./loginControllers.php">S\'Identifier</a>
+          <a class="nav-link" href="index.php?url=login">S\'Identifier</a>
         </li></ul>';
         }?>
         <ul
@@ -135,10 +134,10 @@
           aria-labelledby="navbarDropdownMenuAvatar"
         >
           <li>
-            <a class="dropdown-item" href="accountControllers.php">Mon Compte</a>
+            <a class="dropdown-item" href="index.php?url=account">Mon Compte</a>
           </li>
           <li>
-            <a class="dropdown-item" href="logoutControllers.php">Se Déconnetcer</a>
+            <a class="dropdown-item" href="index.php?url=logout">Se Déconnetcer</a>
           </li>
         </ul>
       </div>
@@ -147,7 +146,7 @@
   </div>
 </nav>
     <!-- MDB -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
   </body>
 </html>

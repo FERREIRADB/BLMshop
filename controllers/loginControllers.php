@@ -1,5 +1,4 @@
 <?php
-require_once '../modele/config.php';
 $errorMsg = "";
 if (isset($_POST['submit'])) {
     $email = trim($_POST['email']);
@@ -29,7 +28,7 @@ if (isset($_POST['submit'])) {
                         $_SESSION['connected'] = true;
                         $_SESSION['genre'] = $row['idGenre'];
                         $success = "Login success";
-                        header('Location: accountControllers.php');
+                        header('Location: index.php?url=account');
                     }
                     // Si correspond pas, erreur
                     else {
@@ -48,7 +47,7 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-include "../vue/login.php";
+include "vue/login.php";
 ?>
 
 

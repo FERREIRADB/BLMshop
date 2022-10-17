@@ -1,5 +1,4 @@
 <?php
-  include_once('../modele/fonctions.php');
   $total = afficherPanierTotal();
 ?>
 <div id="smart-button-container">

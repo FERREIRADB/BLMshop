@@ -1,5 +1,4 @@
 <?php
-require_once '../modele/config.php';
 
 $edit = false;
 $readonly = "readonly";
@@ -20,7 +19,7 @@ function UserDetails(int $user_id)
 }
 
 if (empty($_SESSION['user_id'])) {
-    header('Location: accueilControllers.php');
+    header('Location: index.php?url=accueil');
 }
 $user = UserDetails($_SESSION['user_id']);
 
@@ -29,7 +28,7 @@ if (isset($_POST['btn-edit'])) {
     $edit = true;
 }
 if (isset($_POST['btn-logout'])) {
-    header('location: logoutControllers.php');
+    header('location: index.php?url=logout');
 }
 if ($edit) {
     $readonly = "";
@@ -56,4 +55,4 @@ if (isset($_POST['btn-save'])) {
     }
 }
 
-include "../vue/account.php";?>
+include "vue/account.php";?>

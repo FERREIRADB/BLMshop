@@ -1,4 +1,4 @@
-<?php require_once "../modele/config.php"; 
+<?php
 function createurs()
 {
 
@@ -9,7 +9,7 @@ function createurs()
 
     foreach ($nomCreateurs as $key => $value) {
         echo ' <div class="card" style="height:23rem; width: 16rem; margin:15px; display:inline-block;">
-                    <img class="card-img-top" src="../img/pp/pp' . $key . '.png" height="60%">
+                    <img class="card-img-top" src="img/pp/pp' . $key . '.png" height="60%">
                 <div class="card-body">
                     <h5 class="card-title">' . $key . '</h5>
                     <h7 style="color:gray;">' . $value . '</h7>
@@ -17,5 +17,5 @@ function createurs()
               </div>';
     }
 }
-include "../vue/about.php";
+include "vue/about.php";
 ?>

@@ -1,9 +1,9 @@
-<?php require_once '../modele/config.php'; 
+<?php 
 function categorie()
 {
     global $pdo;
     foreach ($pdo->query('SELECT * FROM categorie') as $row) {
-        echo '<a  href="produitsControllers.php?data=' . $row['idCategorie'] . '">' . $row['nameCategorie'] . '</a>';
+        echo '<a  href="index.php?url=produits&data=' . $row['idCategorie'] . '">' . $row['nameCategorie'] . '</a>';
     }
 }
 
@@ -43,7 +43,7 @@ function produitsAlea()
                         <div class="part-1"> 
                         </div>
                         <div class="part-2">
-                        <a href="detailControllers.php?idProduits='.$row[$chiffrealea]['idProduits'].'" style="text-decoration: none; color: black;">
+                        <a href="index.php?url=detail&idProduits='.$row[$chiffrealea]['idProduits'].'" style="text-decoration: none; color: black;">
                             <h3 class="product-title"> ' . $row[$chiffrealea]['name'] . '</h3>
                             </a>
                             <h4 class="product-price">' .number_format($row[$chiffrealea]['price'], 0, '', '\''). '</h4>
@@ -62,4 +62,4 @@ function produitsAlea()
 
 }
 
-include "../vue/accueil.php";?>
+include "vue/accueil.php";?>

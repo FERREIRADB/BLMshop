@@ -16,4 +16,4 @@ function logout() {
 }
 session_start();
 logout();
-header('Location: ../index.php');
+header('Location: index.php');
