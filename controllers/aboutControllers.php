@@ -4,7 +4,7 @@ function createurs()
 
     $nomCreateurs = [
         "Lucas" => "Fonctionnalités php",
-        "Bryan" => "design complet du site"
+        "Bryan" => "Regarde netflix"
     ];
 
     foreach ($nomCreateurs as $key => $value) {
