@@ -1,4 +1,3 @@
-<?php require_once "../modele/fonctions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php include "include/navbar.php";?>
+<?php include "../controllers/include/navbarControllers.php";?>
     <?php createurs(); ?>
     <?php include "include/footer.php";?>
 </body>
