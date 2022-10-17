@@ -33,9 +33,6 @@
     <?php
     $request = "select * from produits ";
     ?>
-    <div style="display:flex; justify-content:center;">
-        <iframe width="1800px" height="750px" src="https://www.youtube.com/embed/jPpucAll_Qk?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="autoplay; loop;" allowfullscreen></iframe>
-    </div>
 
     <article class="articleProduct" style="width: 100%; text-align: center;">
         <?= produitsAlea() ?>
