@@ -310,3 +310,17 @@ function countProducts($idUser, $idProduit) {
     $nbProduit = count($row);
     return $nbProduit;
 }
+
+
+function afficherPanierTotal()
+{
+
+    global $pdo;
+    $total = 0;
+
+    foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
+        $total += $row['price'];
+    }
+
+    return $total;
+}
