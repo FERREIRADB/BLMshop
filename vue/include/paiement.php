@@ -1,3 +1,7 @@
+<?php
+  include_once('../modele/fonctions.php');
+  $total = afficherPanierTotal();
+?>
 <div id="smart-button-container">
       <div style="text-align: center;">
         <div id="paypal-button-container"></div>
@@ -10,14 +14,14 @@
         style: {
           shape: 'pill',
           color: 'gold',
-          layout: 'vertical',
+          layout: 'horizontal',
           label: 'paypal',
           
         },
 
         createOrder: function(data, actions) {
           return actions.order.create({
-            purchase_units: [{"amount":{"currency_code":"USD","value":0}}]
+            purchase_units: [{"amount":{"currency_code":"USD","value":<?= $total ?>}}]
           });
         },
 
