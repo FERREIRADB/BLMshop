@@ -5,11 +5,15 @@ Description: Projet personnel BLMshop
 -->
 <?php
 
- if ($_SESSION['user'] != "admin@gmail.com") {
+if(!$_SESSION['connected']){
+    http_response_code(403);
+    echo '<meta http-equiv="refresh" content="0;url=index.php?url=index.php?url=accueil">';
+}
+if ($_SESSION['user'] != "admin@gmail.com" || !$_SESSION['connected']) {
      http_response_code(403);
-     header('Location: index.php?url=accueil');
- }
+     echo '<meta http-equiv="refresh" content="0;url=index.php?url=index.php?url=accueil">';
 
+ }
 //recupere en objet tous les produits
 $query = "SELECT * FROM produits";
 $statement = $pdo->prepare($query);
