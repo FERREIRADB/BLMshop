@@ -4,7 +4,7 @@ function createurs()
 {
     //description des créateurs du site web
     $nomCreateurs = [
-        "Lucas" => "Travail aussi woula",
+        "Lucas" => "Travail toutes les functions php",
         "Bryan" => "Travail à fond"
     ];
     //foreach qui parcours le tableau des créateur 
