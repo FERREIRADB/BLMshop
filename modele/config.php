@@ -1,7 +1,7 @@
 <?php 
 
 $dsn = 'mysql:dbname=BLMshop;host=localhost';
-$user = 'Lucas';
+$user = 'root';
 $pass = 'Super';
 session_start();
 try {
@@ -21,7 +21,7 @@ function getDb()
     if ($db) {
         return $db;
     }
-    return $db = new PDO("mysql:host=localhost;dbname=BLMshop", 'Lucas', 'Super', array(
+    return $db = new PDO("mysql:host=localhost;dbname=BLMshop", 'root', 'Super', array(
         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
         PDO::ATTR_PERSISTENT => true,
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
