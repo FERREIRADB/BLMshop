@@ -93,6 +93,18 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php?url=about">A Propos</a>
         </li>
+
+        <?php
+        if($_SESSION['connected']){
+        if($_SESSION['user'] == 'admin@gmail.com')
+        {
+          echo '<li class="nav-item">
+          <a class="nav-link" href="index.php?url=admin">Admin</a>
+        </li>';
+        }}
+        
+        ?>
+
       </ul>
       <!-- Left links -->
     </div>
@@ -101,7 +113,7 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <!-- Icon -->
-      <?php if($_SESSION['connected']){
+      <?php if(!isset($_SESSION['connected'])){
         echo '
       <a class="link-secondary me-3" href="index.php?url=panier">
         <i class="fas fa-shopping-cart"></i>

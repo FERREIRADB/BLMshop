@@ -478,12 +478,19 @@ VALUES
     '$2y$10$yd8Ur5ujlkV3ygM/cplazeZk6X7I39y5cYdlcnlJe75rqNNKu2lnO',
     1
   ),
-(
+  (
     2,
+    'Admin',
+    'admin@gmail.com',
+    '$2y$10$7b9NZVGIPEQtPqo6Xu3EwuD.8B6olXiPHAVS7G8xkuv7UL0y2jyPy',
+    1
+  ),
+(
+    3,
     'Lucas',
     'lucas@gmail.com',
     '$2y$10$OlmcFHYUHpxNG.m2njaKL.sMd4dMsN2X9jxuptuv0GDBXJQs/FnQq',
-    1
+    3
   );
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */

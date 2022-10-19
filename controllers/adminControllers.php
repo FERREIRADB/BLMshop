@@ -5,10 +5,10 @@ Description: Projet personnel BLMshop
 -->
 <?php
 
-// if ($_SESSION['user'] != "admin@gmail.com") {
-//     http_response_code(403);
-//     header('Location: index.php');
-// }
+ if ($_SESSION['user'] != "admin@gmail.com") {
+     http_response_code(403);
+     header('Location: index.php?url=accueil');
+ }
 
 //recupere en objet tous les produits
 $query = "SELECT * FROM produits";
