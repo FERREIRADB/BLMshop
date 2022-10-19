@@ -60,7 +60,7 @@
               <p><i class="fas fa-phone pe-2"></i>+41 78 490 72 89</p>
             </li>
             <li>
-              <p><i class="fas fa-envelope pe-2 mb-0"></i>contact@example.com</p>
+              <p><i class="fas fa-envelope pe-2 mb-0"></i>BLMshop.Pro@gmail.com</p>
             </li>
           </ul>
         </div>

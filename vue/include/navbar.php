@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
+    <title>BLMshop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/navbar.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -124,14 +124,9 @@
             height="35"
             alt="Pas connecter"
             loading="lazy"
-          />';}?>
+          />
         </a>
-        <?php if(!$_SESSION['connected']){
-          echo '<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-          <a class="nav-link" href="index.php?url=login">S\'Identifier</a>
-        </li></ul>';
-        }?>
+        
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
@@ -143,7 +138,13 @@
           <li>
             <a class="dropdown-item" href="index.php?url=logout">Se Déconnetcer</a>
           </li>
-        </ul>
+        </ul>'; }
+        if(!$_SESSION['connected']){
+          echo '<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link" href="index.php?url=login">S\'Identifier</a>
+        </li></ul>';
+        }?>
       </div>
     </div>
     <!-- Right elements -->

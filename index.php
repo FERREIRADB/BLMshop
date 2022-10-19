@@ -10,6 +10,7 @@ include 'controllers/include/navbarControllers.php';
 if (empty($url)) {
         $url = 'accueil';
 }
+//switch de redirecion sur toutes nos pages du site web
 switch ($url) {
     case 'accueil':
         include('controllers/accueilControllers.php');

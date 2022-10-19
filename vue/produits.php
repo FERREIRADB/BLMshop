@@ -12,14 +12,18 @@
 </head>
 
 <body>
-    <div style="margin-left:50px;">
-        <a>Ordonner par :</a>
-        <a href="index.php?url=produits&order=asc">Ordre alphabétique</a>
-        <a href="index.php?url=produits&order=idCategorie">Type de produit</a>
-        <a href="index.php?url=produits&order=priceplus">Le moins cher (vous êtes pauvres)</a>
-        <a href="index.php?url=produits&order=pricemoins">Le plus cher (vous êtes riches)</a>
-    </div>
-    </ul>
+<!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#1127e9;opacity:50%;color:white;border-radius:50px;">
+    Ordonner par :
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="index.php?url=produits&order=asc">Ordre alphabétique</a></li>
+    <li><a class="dropdown-item" href="index.php?url=produits&order=idCategorie">Type de produit</a></li>
+    <li><a class="dropdown-item" href="index.php?url=produits&order=priceplus">Croissant</a></li>
+    <li><a class="dropdown-item" href="index.php?url=produits&order=pricemoins">Décroissant</a></li>
+  </ul>
+</div>
     <?php include "include/carousel.php"; ?>
     <article class="articleProduct" style="width: 100%; text-align: center;"><?= produitsDiv($request) ?></article>
 

@@ -1,8 +1,9 @@
 <?php 
 
-
+//function qui recupere tous les produits dans la bdd et les affiche en aleatoire
 function produitsAlea()
 {
+    //recupere les produits dans la bdd
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM produits");
     $statement->execute();
@@ -20,6 +21,7 @@ function produitsAlea()
             </div>
         </div>
         <div class="row">';
+        //for qui qui affiche 4 produits unique dans l'accueil 
     for ($i = 0; $i < 4; $i++) {
         $chiffrealea = rand(0, 6);
 

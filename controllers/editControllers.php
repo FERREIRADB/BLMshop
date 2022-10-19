@@ -21,7 +21,8 @@ if (isset($_POST['edit'])) {
     $query = "UPDATE produits SET `name` = ?, price = ?, puissance = ?, couple = ?, moteur = ?, consoVille = ?, consoAuto = ? WHERE idProduits = ?";
     $statement = $pdo->prepare($query);
     $statement->execute([$name, $price, $puissance, $couple, $moteur, $consoVille, $consoAuto, $id]);
-    header('Location: index.php?url=admin&');
+                            echo '<meta http-equiv="refresh" content="0;url=index.php?url=admin">';
+
 
 }
 include "vue/edit.php";

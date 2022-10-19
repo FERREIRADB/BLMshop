@@ -31,7 +31,7 @@ function produitsDiv($param)
                                 </div>
                             </div>
                         </div>
-                        <a href="index.php?url=detail&idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" style="background-color:#1127e9; border-color:#1127e9;"><small>Ajouter au panier</small></button></div></a>
+                        <a href="index.php?url=detail&idProduits=' . $row['idProduits'] . '"><div class="mx-3 mt-3 mb-2"><button type="button" class="btn-danger btn-block" style="background-color:#1127e9;color:white; border-color:#1127e9; border-radius:50px;"><small>Voir en détail</small></button></div></a>
                     </div>
                 </div>
             </div>';

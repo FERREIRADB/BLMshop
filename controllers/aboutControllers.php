@@ -1,12 +1,13 @@
 <?php
+//function qui permet d'afficher les créateurs du site web
 function createurs()
 {
-
+    //description des créateurs du site web
     $nomCreateurs = [
         "Lucas" => "Fonctionnalités php",
         "Bryan" => "Regarde netflix"
     ];
-
+    //foreach qui parcours le tableau des créateur 
     foreach ($nomCreateurs as $key => $value) {
         echo ' <div class="card" style="height:23rem; width: 16rem; margin:15px; display:inline-block;">
                     <img class="card-img-top" src="img/pp/pp' . $key . '.png" height="60%">

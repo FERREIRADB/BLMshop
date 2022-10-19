@@ -7,6 +7,7 @@ $readonly = "readonly";
 if (empty($_SESSION['user_id'])) {
     header('Location: index.php?url=accueil');
 }
+//function qui recupere en objet les info d'un user et les return
 function UserDetails(int $user_id)
 {
     global $pdo;

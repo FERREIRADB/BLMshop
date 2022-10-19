@@ -77,7 +77,7 @@ function afficherPanier()
 
     echo '
     <div class="ibox-content" style="display:flex; justify-content:center;">
-    <a href="produits.php">
+    <a href="index.php?url=produits">
     <button class="btn btn-white" style="font-size:15px;"><i class="fa fa-arrow-left"></i> Continuer les achats</button>
     </a>
     </div>
