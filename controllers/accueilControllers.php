@@ -1,3 +1,8 @@
+<!--
+Auteur: Ferreira Bryan / Lucas Chavanne
+Date: 19.10.2022
+Description: Projet personnel BLMshop
+-->
 <?php 
 
 //function qui recupere tous les produits dans la bdd et les affiche en aleatoire
