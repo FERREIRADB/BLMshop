@@ -1,3 +1,8 @@
+<!--
+Auteur: Ferreira Bryan / Lucas Chavanne
+Date: 19.10.2022
+Description: Projet personnel BLMshop
+-->
 <?php
 //function qui va recupere le genre de l'utilisateur
 function LireGenre($idGenre){

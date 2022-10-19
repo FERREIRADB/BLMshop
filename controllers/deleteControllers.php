@@ -1,3 +1,8 @@
+<!--
+Auteur: Ferreira Bryan / Lucas Chavanne
+Date: 19.10.2022
+Description: Projet personnel BLMshop
+-->
 <?php 
 //recupere l'id du produits
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
