@@ -1,7 +1,9 @@
 <?php
+//function qui affiche tous les produits dans la page produits
 function produitsDiv($param)
 {
     echo '<div class="container-fluid d-flex justify-content-center"><div class="row mt-5">';
+    //foreach qui parcours les produits dans la bdd
     foreach (getDb()->query($param) as $row) {
         echo '
             <div class="col-sm-4">
@@ -41,7 +43,7 @@ function produitsDiv($param)
 
 $request = "select * from produits ";
 
-
+//permet de trier les produits par ordre croissant, decroissant, ordre alphabetique et par types
     if (isset($_GET['data'])) {
         $request .= "WHERE idCategorie = '" . $_GET['data'] . "'";
     }

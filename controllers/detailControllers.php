@@ -1,8 +1,11 @@
 <?php 
+//function qui affiche le détail du produits
 function detailProduit()
 {
+    //recupere en GET l'id
     $id = filter_input(INPUT_GET, 'idProduits', FILTER_VALIDATE_INT);
 
+    //affiche le produits selon sont id
     if ($id != "") {
         $statement = getDb()->prepare("SELECT name, nameImage, price FROM produits WHERE idProduits = ?;");
         $statement->execute([$id]);
@@ -35,6 +38,7 @@ function detailProduit()
     echo '              </span>';
     echo '        <span class="product-price" style="margin-top:10px; margin-left:12%">';
 
+    //test si un user est connecter pour pouvoir afficher le button ajouter au panier
     if (isset($_SESSION['user'])) {
         echo '                <a style="color:white; font-size:23px; text-decoration:none;" href="index.php?url=panier&idProduits=' . $id . '"><b>Ajouter au panier</b></a>';
     } else {
