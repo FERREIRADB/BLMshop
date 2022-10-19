@@ -1,6 +1,5 @@
 <?php
-if(!$_SESSION['connected'])
-{
+if (!$_SESSION['connected']) {
     header('Location: index.php?url=login');
 }
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
@@ -40,14 +39,14 @@ function affichagePanier($row)
             </div>';
 }
 
-
+//affiche le total des produits dans le panier et la function vider mon panier
 function afficherPanier()
 {
 
     global $pdo;
     $total = 0;
-    
 
+    //calcul le total des produits
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         $total += $row['price'];
     }
@@ -66,11 +65,10 @@ function afficherPanier()
     foreach ($pdo->query('SELECT * FROM produits JOIN panier ON panier.idProduits = produits.idProduits WHERE panier.idUser = ' . $_SESSION['user_id']) as $row) {
         if (countProducts($_SESSION['user_id'], $row['idProduits']) <= 1) {
             affichagePanier($row);
-        }
-        elseif (countProducts($_SESSION['user_id'], $row['idProduits']) > 1) {
+        } elseif (countProducts($_SESSION['user_id'], $row['idProduits']) > 1) {
             echo countProducts($_SESSION['user_id'], $row['idProduits']);
             affichagePanier($row);
-        break;
+            break;
         }
     }
 
@@ -87,6 +85,7 @@ function afficherPanier()
     </div>
     </div>';
 }
+//function qui permet de vider le panier
 function viderPanier($idUser)
 {
     if ($idUser != "") {
@@ -97,6 +96,7 @@ function viderPanier($idUser)
     }
 }
 
+//function qui supprime un article du panier 
 function deleteArticlePanier($id)
 {
     if ($id != "") {
@@ -107,7 +107,8 @@ function deleteArticlePanier($id)
     }
 }
 
-function countProducts($idUser, $idProduit) 
+//function qui compte le nombre de produits
+function countProducts($idUser, $idProduit)
 {
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM panier where idUser = ? AND idProduits = ?");
@@ -116,6 +117,8 @@ function countProducts($idUser, $idProduit)
     $nbProduit = count($row);
     return $nbProduit;
 }
+
+//affiche le prix total pour le paypal
 function afficherPanierTotal()
 {
     global $pdo;
@@ -127,4 +130,3 @@ function afficherPanierTotal()
     return $total;
 }
 include "vue/panier.php";
-

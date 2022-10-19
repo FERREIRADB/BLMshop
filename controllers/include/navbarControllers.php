@@ -1,12 +1,12 @@
 <?php
-
+//function qui va recupere le genre de l'utilisateur
 function LireGenre($idGenre){
     global $pdo;
     $statement = $pdo->prepare("SELECT nameGenre FROM genre where idGenre = $idGenre");
     $statement->execute();
     return $statement->fetch(PDO::FETCH_OBJ);
 }
-
+//function qui affiche les categorie de produits
 function AfficherCategorie(){
     global $pdo;
     foreach ($pdo->query('SELECT * FROM categorie') as $row)
@@ -14,6 +14,7 @@ function AfficherCategorie(){
             <a class="dropdown-item" href="index.php?url=produits&data='.$row['idCategorie'].'">'.$row['nameCategorie'].'</a>
         </li>';
 }
+//function qui affiche les modeles de produits
 
 function AfficherModele(){
     global $pdo;
